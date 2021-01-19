@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructures
 {
     public class LinkedList
     {
+
         public Node Head { get; set; }
         ///<summary>
         ///Empty Linked List
@@ -63,7 +62,7 @@ namespace DataStructures
             node.Next = Head;
             Head = node;
         }
-        public bool Includes (int value)
+        public bool Includes(int value)
         {
             Node currentNode = Head;
             while (currentNode.Next != null)
@@ -87,7 +86,7 @@ namespace DataStructures
                 currentNode = currentNode.Next;
             }
             return currentNode.Value;
-        
+
         }
 
         public int InsertAfter(int value, int newValue)
@@ -124,6 +123,32 @@ namespace DataStructures
                 currentNode = currentNode.Next;
             }
             return -1;
+        }
+        public int LocateNodeFromTail(int k)
+        {
+            Node currentNode = Head;
+            int lengthList = 0;
+            int counter = 0;
+            int placeOfNode;
+            int selectedNodeValue = 0;
+            if (k < 0) { return -1; }
+            while (currentNode.Next != null)
+            {
+                lengthList++;
+                currentNode = currentNode.Next;
+            }
+            if (k > lengthList) { return -2; }
+            placeOfNode = lengthList - k;
+            if (placeOfNode < 1) { return -3; }
+            currentNode = Head;
+            while (counter <= placeOfNode)
+            {
+                counter++;
+                selectedNodeValue = currentNode.Value;
+                currentNode = currentNode.Next;
+            }
+            return selectedNodeValue;
+
         }
     }
 }

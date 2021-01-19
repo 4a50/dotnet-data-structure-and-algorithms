@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataStructures
+﻿namespace DataStructures
 {
     public class Node
     {
@@ -13,7 +9,7 @@ namespace DataStructures
         ///Usage: Node node = new Node(7);
         /// </summary>
         /// <param name="value"></param>
-        public Node (int value)
+        public Node(int value)
         {
             Value = value;
         }
