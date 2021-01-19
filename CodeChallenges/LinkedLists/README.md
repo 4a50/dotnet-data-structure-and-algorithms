@@ -47,4 +47,4 @@ InsertAfter(int value, int newValue) - Will insert AFTER the selected Node with 
 
 ## Solution
 
-[Code Challenge 5 WhiteBoard](./assets/CodeChallenge5.png)
+![Code Challenge 5 WhiteBoard](./assets/CodeChallenge5.png)
