@@ -125,6 +125,7 @@ namespace DataStructuresTest
             testList.Insert(741);
             Assert.Equal(22, testList.InsertBefore(22, 199));
         }
+        [Fact]
         public void Insert_New_Value_Before_Requested_Value_Not_Found()
         {
             LinkedList testList = new LinkedList();
@@ -133,7 +134,7 @@ namespace DataStructuresTest
             testList.Insert(81);
             testList.Insert(1999);
             testList.Insert(741);
-            Assert.Equal(22, testList.InsertBefore(100, 199));
+            Assert.Equal(-1, testList.InsertBefore(100, 199));
         }
     }
 }
