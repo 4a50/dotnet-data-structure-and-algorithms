@@ -124,10 +124,17 @@ namespace DataStructures
             }
             return -1;
         }
+        /// <summary>
+        /// Will locate the value of the 
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
         public int LocateNodeFromTail(int k)
         {
             Node currentNode = Head;
-            int lengthList = 0;
+            // Set the lengthList to one, to take into account the initial setting
+            // of the Head as the currentNode
+            int lengthList = 1;            
             int counter = 0;
             int placeOfNode;
             int selectedNodeValue = 0;
@@ -139,8 +146,9 @@ namespace DataStructures
             }
             if (k > lengthList) { return -2; }
             placeOfNode = lengthList - k;
-            if (placeOfNode < 1) { return -3; }
+            if (placeOfNode <= 1) { Console.WriteLine(placeOfNode); return -3; }
             currentNode = Head;
+            //TODO: Fix the counter that is equal to the length of the list.
             while (counter <= placeOfNode)
             {
                 counter++;

@@ -12,7 +12,8 @@ namespace DataStructures
             list.Insert(48);
             list.Insert(60);
             list.Insert(72);
-            int testValue = list.LocateNodeFromTail(4);
+            int testValue = list.LocateNodeFromTail(5);
+            System.Console.WriteLine(testValue);
 
 
 
