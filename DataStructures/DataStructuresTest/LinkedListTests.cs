@@ -80,5 +80,60 @@ namespace DataStructuresTest
             LinkedList testList = new LinkedList();
             Assert.Null(testList.Head);
         }
+        [Fact]
+        public void Append_A_Value_To_Linked_List()
+        {
+            LinkedList testList = new LinkedList(12);
+            testList.Insert(2);
+            testList.Insert(22);
+            testList.Insert(81);
+            testList.Insert(20);
+            
+            Assert.Equal(756, testList.Append(756));
+        }
+        [Fact]
+        public void Insert_New_Value_After_Requested_Value()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(2); 
+            testList.Insert(22); 
+            testList.Insert(81);
+            testList.Insert(1999);
+            testList.Insert(741);
+            Assert.Equal(2, testList.InsertAfter(22, 705));
+
+        }
+        [Fact]
+        public void Insert_New_Value_After_Value_Not_Found()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(2); 
+            testList.Insert(22);
+            testList.Insert(81);
+            testList.Insert(1999);
+            testList.Insert(741);
+            Assert.Equal(-1, testList.InsertAfter(123, 705));
+        }
+        [Fact]
+        public void Insert_New_Value_Before_Requested_Value()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(2);
+            testList.Insert(22);
+            testList.Insert(81);
+            testList.Insert(1999);
+            testList.Insert(741);
+            Assert.Equal(22, testList.InsertBefore(22, 199));
+        }
+        public void Insert_New_Value_Before_Requested_Value_Not_Found()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(2);
+            testList.Insert(22);
+            testList.Insert(81);
+            testList.Insert(1999);
+            testList.Insert(741);
+            Assert.Equal(22, testList.InsertBefore(100, 199));
+        }
     }
 }

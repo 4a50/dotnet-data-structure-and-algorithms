@@ -73,9 +73,57 @@ namespace DataStructures
             }
             return false;
         }
-        public void Append(int value)
+        public int Append(int value)
         {
-            //Add a node to the end of the list.
+            Node currentNode = Head;
+            while (currentNode != null)
+            {
+                if (currentNode.Next == null)
+                {
+                    Node newNode = new Node(value);
+                    currentNode.Next = newNode;
+                    return newNode.Value;
+                }
+                currentNode = currentNode.Next;
+            }
+            return currentNode.Value;
+        
+        }
+
+        public int InsertAfter(int value, int newValue)
+        {
+            Node currentNode = Head;
+            while (currentNode.Next != null)
+            {
+                if (currentNode.Value == value)
+                {
+                    Node newNode = new Node(newValue);
+                    newNode.Next = currentNode.Next;
+                    currentNode.Next = newNode;
+                    return newNode.Next.Value;
+                }
+                currentNode = currentNode.Next;
+            }
+            return -1;
+        }
+        public int InsertBefore(int value, int newValue)
+        {
+            Node oldNode = null;
+            Node currentNode = Head;
+            while (currentNode.Next != null)
+            {
+                if (currentNode.Value == value)
+                {
+                    Console.WriteLine($"Found {currentNode.Value}");
+                    Node newNode = new Node(newValue);
+                    oldNode.Next = newNode;
+                    newNode.Next = currentNode;
+                    return newNode.Next.Value;
+                }
+                oldNode = currentNode;
+                currentNode = currentNode.Next;
+            }
+            return -1;
         }
     }
 }
