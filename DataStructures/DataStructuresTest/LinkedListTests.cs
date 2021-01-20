@@ -1,6 +1,5 @@
-using System;
-using Xunit;
 using DataStructures;
+using Xunit;
 namespace DataStructuresTest
 {
     public class LinkListTests
@@ -42,10 +41,10 @@ namespace DataStructuresTest
         [Fact]
         public void Find_Value_In_The_Linked_List()
         {
-            LinkedList testList = new LinkedList(4);            
+            LinkedList testList = new LinkedList(4);
             testList.Insert(23);
-            Assert.True(testList.Includes(23));            
-            
+            Assert.True(testList.Includes(23));
+
         }
         [Fact]
         public void Does_Not_Find_Value_In_Linked_List()
@@ -69,7 +68,7 @@ namespace DataStructuresTest
         public void Properly_Returns_All_Values_In_List()
         {
             LinkedList testList = new LinkedList(34);
-            string testStr = "[490] => [162] => [34] => Null";            
+            string testStr = "[490] => [162] => [34] => Null";
             testList.Insert(162);
             testList.Insert(490);
             Assert.Equal(testStr, testList.Print());
@@ -88,15 +87,15 @@ namespace DataStructuresTest
             testList.Insert(22);
             testList.Insert(81);
             testList.Insert(20);
-            
+
             Assert.Equal(756, testList.Append(756));
         }
         [Fact]
         public void Insert_New_Value_After_Requested_Value()
         {
             LinkedList testList = new LinkedList();
-            testList.Insert(2); 
-            testList.Insert(22); 
+            testList.Insert(2);
+            testList.Insert(22);
             testList.Insert(81);
             testList.Insert(1999);
             testList.Insert(741);
@@ -107,7 +106,7 @@ namespace DataStructuresTest
         public void Insert_New_Value_After_Value_Not_Found()
         {
             LinkedList testList = new LinkedList();
-            testList.Insert(2); 
+            testList.Insert(2);
             testList.Insert(22);
             testList.Insert(81);
             testList.Insert(1999);
@@ -136,5 +135,60 @@ namespace DataStructuresTest
             testList.Insert(741);
             Assert.Equal(-1, testList.InsertBefore(100, 199));
         }
-    }
+        /// <summary>
+        /// These tests the Kth value from the Tail in a linked List
+        /// </summary>
+        [Fact]
+        public void Kth_Node_Location_Of_Node_Is_Beyond_The_Range_Of_The_List()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            testList.Insert(24);
+            testList.Insert(48);
+            testList.Insert(60);
+            testList.Insert(72);
+            Assert.Equal(-2, testList.LocateKthNodeFromTail(6));
+        }
+        [Fact]
+        public void Kth_Value_And_Linked_List_Length_Are_Equal()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            testList.Insert(24);
+            testList.Insert(48);
+            testList.Insert(60);
+            testList.Insert(72);
+            Assert.Equal(72, testList.LocateKthNodeFromTail(5));
+        }
+        [Fact]
+        public void K_Value_Is_A_Negative_Number()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            testList.Insert(24);
+            testList.Insert(48);
+            testList.Insert(60);
+            testList.Insert(72);
+            Assert.Equal(-1, testList.LocateKthNodeFromTail(-1));
+        }
+        [Fact]
+        public void Kth_Node_In_A_Linked_List_Of_One()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            Assert.Equal(12, testList.LocateKthNodeFromTail(0));
+        }
+        [Fact]
+        public void Find_Kth_Value_In_A_Linked_List()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            testList.Insert(24);
+            testList.Insert(48);
+            testList.Insert(60);
+            testList.Insert(72);
+            Assert.Equal(60, testList.LocateKthNodeFromTail(3));
+        }
+
+    }   
 }

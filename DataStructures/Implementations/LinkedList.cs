@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructures
 {
     public class LinkedList
     {
+
         public Node Head { get; set; }
         ///<summary>
         ///Empty Linked List
@@ -63,7 +62,7 @@ namespace DataStructures
             node.Next = Head;
             Head = node;
         }
-        public bool Includes (int value)
+        public bool Includes(int value)
         {
             Node currentNode = Head;
             while (currentNode.Next != null)
@@ -87,7 +86,7 @@ namespace DataStructures
                 currentNode = currentNode.Next;
             }
             return currentNode.Value;
-        
+
         }
 
         public int InsertAfter(int value, int newValue)
@@ -124,6 +123,46 @@ namespace DataStructures
                 currentNode = currentNode.Next;
             }
             return -1;
+        }
+        /// <summary>
+        /// Will locate the value of the 
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public int LocateKthNodeFromTail(int k)
+        {
+            Node currentNode = Head;
+            // Set the lengthList to one, to take into account the initial setting
+            // of the Head as the currentNode
+            int lengthList = 1;            
+            int counter = 0;
+            int placeOfNode;
+            int selectedNodeValue = 0;
+            //If user enters a value that is less than 0
+            if (k < 0) { return -1; }
+            //While loop gets the length of the list and stores into lengthList
+            while (currentNode.Next != null)
+            {
+                lengthList++;
+                currentNode = currentNode.Next;
+            }            
+            placeOfNode = lengthList - k;
+            // if the position of the desire node is outside the length of the list.
+            if (placeOfNode < 0) { return -2; }            
+            // if the place of Node at the zero position, return the HeadValue.
+            currentNode = Head;
+            if (placeOfNode == 0) { return currentNode.Value; }
+            //while loop will iterate to the desired place of the node.
+            do
+            {
+                counter++;
+                selectedNodeValue = currentNode.Value;
+                //Console.WriteLine($"==> {selectedNodeValue} {counter} {placeOfNode}");
+                if (counter == placeOfNode) return selectedNodeValue;
+                currentNode = currentNode.Next;
+            } while (currentNode != null);
+                return selectedNodeValue;
+
         }
     }
 }

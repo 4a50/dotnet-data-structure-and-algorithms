@@ -47,4 +47,37 @@ InsertAfter(int value, int newValue) - Will insert AFTER the selected Node with 
 
 ## Solution
 
-![Code Challenge 5 WhiteBoard](./assets/CodeChallenge5.png)
+![Code Challenge 6 WhiteBoard](./assets/CodeChallenge6.png)
+
+# Finding the Kth Value from the Tail in a Linked List
+
+## Challenge
+
+Write a method that will find the Kth value from the tail of a *Linked List*.
+
+Create Tests to test the following:
+
++ Where k is greater than the length of the linked list
++ Where k and the length of the list are the same
++ Where k is not a positive integer
++ Where the linked list is of a size 1
++ �Happy Path� where k is not at the end, but somewhere in the middle of the linked list
+
+##  Approach and Efficiency
+
+After whiteboarding the problem, I attempted to use a Test Driven approach.
+There were a couple of area that required another look and re-evaluation of my whiteboard.  
++ Syncing a counter and iteration through the linked list.
+
+**Big O**
+Time O(n)
+Space O(n)
+
+## API
+
+LocateKthNodeFromTail(int k) - Find the Kth value from the tail of a Linked List
+
+## Solution
+
+![Code Challenge 7 WhiteBoard](./assets/CodeChallenge7.png)
+
