@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 namespace DataStructures
 {
@@ -12,8 +12,18 @@ namespace DataStructures
             list.Insert(48);
             list.Insert(60);
             list.Insert(72);
-            int testValue = list.LocateNodeFromTail(0);
-            System.Console.WriteLine(testValue);
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(list.LocateKthNodeFromTail(i));
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(list.LocateKthNodeFromTail(7));
+            Console.WriteLine(list.LocateKthNodeFromTail(-1));
+            list.Print();
+            list.PrintR(list.Head);
+
+            
 
 
 

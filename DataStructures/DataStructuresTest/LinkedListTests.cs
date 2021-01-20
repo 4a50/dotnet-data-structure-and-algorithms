@@ -135,6 +135,49 @@ namespace DataStructuresTest
             testList.Insert(741);
             Assert.Equal(-1, testList.InsertBefore(100, 199));
         }
+        /// <summary>
+        /// These tests the Kth value from the Tail in a linked List
+        /// </summary>
+        [Fact]
+        public void Kth_Node_Location_Of_Node_Is_Beyond_The_Range_Of_The_List()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            testList.Insert(24);
+            testList.Insert(48);
+            testList.Insert(60);
+            testList.Insert(72);
+            Assert.Equal(-2, testList.LocateKthNodeFromTail(6));
+        }
+        [Fact]
+        public void Kth_Value_And_Linked_List_Length_Are_Equal()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            testList.Insert(24);
+            testList.Insert(48);
+            testList.Insert(60);
+            testList.Insert(72);
+            Assert.Equal(72, testList.LocateKthNodeFromTail(5));
+        }
+        [Fact]
+        public void K_Value_Is_A_Negative_Number()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            testList.Insert(24);
+            testList.Insert(48);
+            testList.Insert(60);
+            testList.Insert(72);
+            Assert.Equal(-1, testList.LocateKthNodeFromTail(-1));
+        }
+        [Fact]
+        public void Kth_Node_In_A_Linked_List_Of_One()
+        {
+            LinkedList testList = new LinkedList();
+            testList.Insert(12);
+            Assert.Equal(12, testList.LocateKthNodeFromTail(0));
+        }
         [Fact]
         public void Find_Kth_Value_In_A_Linked_List()
         {
@@ -144,18 +187,8 @@ namespace DataStructuresTest
             testList.Insert(48);
             testList.Insert(60);
             testList.Insert(72);
-            Assert.Equal(60, testList.LocateNodeFromTail(3));
+            Assert.Equal(60, testList.LocateKthNodeFromTail(3));
         }
-        [Fact]
-        public void Kth_Value_Is_Outside_Length_Of_List()
-        {
-            LinkedList testList = new LinkedList();
-            testList.Insert(12);
-            testList.Insert(24);
-            testList.Insert(48);
-            testList.Insert(60);
-            testList.Insert(72);
-            Assert.Equal(-1, testList.LocateNodeFromTail(5));
-        }
-    }
+
+    }   
 }

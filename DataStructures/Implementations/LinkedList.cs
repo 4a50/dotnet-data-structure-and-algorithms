@@ -129,7 +129,7 @@ namespace DataStructures
         /// </summary>
         /// <param name="k"></param>
         /// <returns></returns>
-        public int LocateNodeFromTail(int k)
+        public int LocateKthNodeFromTail(int k)
         {
             Node currentNode = Head;
             // Set the lengthList to one, to take into account the initial setting
@@ -145,22 +145,23 @@ namespace DataStructures
             {
                 lengthList++;
                 currentNode = currentNode.Next;
-            }
-            //if k is greater than the amount of nodes in the list
-            if (k > lengthList) { return -2; }
+            }            
             placeOfNode = lengthList - k;
             // if the position of the desire node is outside the length of the list.
-            if (placeOfNode < 0) { Console.WriteLine(placeOfNode); return -3; }            
+            if (placeOfNode < 0) { return -2; }            
+            // if the place of Node at the zero position, return the HeadValue.
             currentNode = Head;
+            if (placeOfNode == 0) { return currentNode.Value; }
             //while loop will iterate to the desired place of the node.
-            while (counter <= placeOfNode)
+            do
             {
                 counter++;
                 selectedNodeValue = currentNode.Value;
-                //Guarding against setting the currentNode to a null.
-                if (currentNode.Next != null) { currentNode = currentNode.Next; }
-            } 
-            return selectedNodeValue;
+                //Console.WriteLine($"==> {selectedNodeValue} {counter} {placeOfNode}");
+                if (counter == placeOfNode) return selectedNodeValue;
+                currentNode = currentNode.Next;
+            } while (currentNode != null);
+                return selectedNodeValue;
 
         }
     }
