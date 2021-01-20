@@ -138,23 +138,28 @@ namespace DataStructures
             int counter = 0;
             int placeOfNode;
             int selectedNodeValue = 0;
+            //If user enters a value that is less than 0
             if (k < 0) { return -1; }
+            //While loop gets the length of the list and stores into lengthList
             while (currentNode.Next != null)
             {
                 lengthList++;
                 currentNode = currentNode.Next;
             }
+            //if k is greater than the amount of nodes in the list
             if (k > lengthList) { return -2; }
             placeOfNode = lengthList - k;
-            if (placeOfNode <= 1) { Console.WriteLine(placeOfNode); return -3; }
+            // if the position of the desire node is outside the length of the list.
+            if (placeOfNode < 0) { Console.WriteLine(placeOfNode); return -3; }            
             currentNode = Head;
-            //TODO: Fix the counter that is equal to the length of the list.
+            //while loop will iterate to the desired place of the node.
             while (counter <= placeOfNode)
             {
                 counter++;
                 selectedNodeValue = currentNode.Value;
-                currentNode = currentNode.Next;
-            }
+                //Guarding against setting the currentNode to a null.
+                if (currentNode.Next != null) { currentNode = currentNode.Next; }
+            } 
             return selectedNodeValue;
 
         }
