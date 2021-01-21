@@ -190,5 +190,5 @@ namespace DataStructuresTest
             Assert.Equal(60, testList.LocateKthNodeFromTail(3));
         }
 
-    }   
+    }
 }

@@ -6,27 +6,46 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            LinkedList list = new LinkedList();
-            list.Insert(12);
-            list.Insert(24);
-            list.Insert(48);
-            list.Insert(60);
-            list.Insert(72);
-            for (int i = 0; i < 5; i++)
+            LinkedList aList = new LinkedList();
+            aList.Insert(10);
+            aList.Insert(8);
+            aList.Insert(6);
+            aList.Insert(4);
+            aList.Insert(2);
+            LinkedList bList = new LinkedList();
+            bList.Insert(9);
+            bList.Insert(7);
+            bList.Insert(5);
+            bList.Insert(3);
+            bList.Insert(1);
+
+            Console.WriteLine("A List");
+            aList.Print();
+            Console.WriteLine("B List");
+            bList.Print();            
+            Console.WriteLine(ZipLists(aList, bList).Value);            
+            aList.Print();
+        }
+        public static Node ZipLists(LinkedList aList, LinkedList bList)
+        {
+            Node a = aList.Head;
+            Node b = bList.Head;
+            Node c = b.Next;
+
+            while (b.Next != null)
             {
-                Console.WriteLine(list.LocateKthNodeFromTail(i));
+                //Connect Node A to B, B next to a.Next to start the zip process
+                b.Next = a.Next;
+                a.Next = b;
+                //Move our pointers one increment.
+                a = b.Next;
+                b = c;
+                c = c.Next;
+
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine(list.LocateKthNodeFromTail(7));
-            Console.WriteLine(list.LocateKthNodeFromTail(-1));
-            list.Print();
-            list.PrintR(list.Head);
-
-            
-
-
-
+            //The loop will exit before the last node is connected.  This must be in to complete the list.
+            a.Next = b;
+            return a.Next;
         }
     }
 }

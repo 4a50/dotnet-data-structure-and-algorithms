@@ -81,3 +81,31 @@ LocateKthNodeFromTail(int k) - Find the Kth value from the tail of a Linked List
 
 ![Code Challenge 7 WhiteBoard](./assets/CodeChallenge7.png)
 
+# Zip Two Linked Lists
+
+## Challenge
+
+Write a method that will 'zip' two linked lists together. Each node alternating into a new list.
+
+Create Tests for the following criteria:
+
++ Expected Head Node returned
++ Not returning One node previous to expected Head Node
+
+##  Approach and Efficiency
+
+Created a tracking Node, to act as a intermediary between the each list.  This allowed
+the movement of the pointers on both lists to properly link to each other.
+
+**Big O**
+Time O(n)
+Space O(n)
+
+## API
+
+ZipLists(LinkedList aList, LinkedList bList) <-- Intake of each list.
++ Returning the new Head Node
+
+## Solution
+
+![Code Challenge 8 WhiteBoard](./assets/CodeChallenge8.png)
