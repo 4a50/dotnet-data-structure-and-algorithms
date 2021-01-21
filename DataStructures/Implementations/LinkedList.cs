@@ -134,7 +134,7 @@ namespace DataStructures
             Node currentNode = Head;
             // Set the lengthList to one, to take into account the initial setting
             // of the Head as the currentNode
-            int lengthList = 1;            
+            int lengthList = 1;
             int counter = 0;
             int placeOfNode;
             int selectedNodeValue = 0;
@@ -145,10 +145,10 @@ namespace DataStructures
             {
                 lengthList++;
                 currentNode = currentNode.Next;
-            }            
+            }
             placeOfNode = lengthList - k;
             // if the position of the desire node is outside the length of the list.
-            if (placeOfNode < 0) { return -2; }            
+            if (placeOfNode < 0) { return -2; }
             // if the place of Node at the zero position, return the HeadValue.
             currentNode = Head;
             if (placeOfNode == 0) { return currentNode.Value; }
@@ -161,7 +161,7 @@ namespace DataStructures
                 if (counter == placeOfNode) return selectedNodeValue;
                 currentNode = currentNode.Next;
             } while (currentNode != null);
-                return selectedNodeValue;
+            return selectedNodeValue;
 
         }
     }
