@@ -74,7 +74,16 @@ namespace DataStructures
         }
         public int Append(int value)
         {
-            Node<int> currentNode = Head;
+            Node<int> currentNode;
+            //If Head is null, will make this appended node the head.
+            //Else use stored Head value to find end of LinkedList.
+            if (Head == null)
+            {
+                currentNode = new Node<int>(value);
+                Head = currentNode;
+                return currentNode.Value;
+            }
+            else { currentNode = Head; }
             while (currentNode != null)
             {
                 if (currentNode.Next == null)
@@ -85,6 +94,7 @@ namespace DataStructures
                 }
                 currentNode = currentNode.Next;
             }
+
             return currentNode.Value;
 
         }
