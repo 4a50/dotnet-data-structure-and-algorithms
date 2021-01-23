@@ -1,6 +1,5 @@
-using System.Collections.Generic;
-using Xunit;
 using DataStructures;
+using Xunit;
 
 namespace CodeChallengeTests
 {
@@ -11,7 +10,7 @@ namespace CodeChallengeTests
         /// </summary>
         [Fact]
         public void Zipped_Linked_List_Returns_Expected_Head_Node()
-        {            
+        {
             LinkedList aList = new LinkedList();
             aList.Insert(10);
             aList.Insert(8);

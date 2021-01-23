@@ -1,5 +1,4 @@
-﻿using System;
-namespace DataStructures
+﻿namespace DataStructures
 {
     class Program
     {
@@ -15,17 +14,29 @@ namespace DataStructures
             //myList.Print();
             //myList.PrintR(myList.Head);
 
-            Stack stack = new Stack();
+            //Stack stack = new Stack();
 
-            stack.Push(19);
-            stack.Push(18);
-            stack.Push(17);
-            stack.Push(16);
-            Console.WriteLine($"TOP: {stack.Top.Value}");
-            stack.Pop();
-            stack.Pop();
-            stack.Pop();
-            Console.WriteLine($"TOP: {stack.Top.Value}");
+            //stack.Push(19);
+            //stack.Push(18);
+            //stack.Push(17);
+            //stack.Push(16);
+
+            Queue queue = new Queue();
+
+            queue.Enqueue(5);
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+            queue.Enqueue(25);
+            queue.Enqueue(30);
+            System.Console.WriteLine($"Peek: {queue.Peek()} Empty: {queue.isEmpty()}");
+            queue.Dequeue();
+            queue.Dequeue();
+            queue.Dequeue();
+            System.Console.WriteLine($"Peek: {queue.Peek()} Empty: {queue.isEmpty()}");
+            queue.Dequeue();
+            queue.Dequeue();
+            System.Console.WriteLine($"Empty: {queue.isEmpty()}");
+
 
 
 

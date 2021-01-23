@@ -22,8 +22,8 @@ namespace DataStructures
             Console.WriteLine("A List");
             aList.Print();
             Console.WriteLine("B List");
-            bList.Print();            
-            Console.WriteLine(ZipLists(aList, bList).Value);            
+            bList.Print();
+            Console.WriteLine(ZipLists(aList, bList).Value);
             aList.Print();
         }
         public static Node ZipLists(LinkedList aList, LinkedList bList)
