@@ -58,7 +58,7 @@ namespace DataStructuresTest
             stack.Pop();
             stack.Pop();
             stack.Pop();
-            Assert.True(stack.isEmpty());
+            Assert.True(stack.IsEmpty());
         }
         /// <summary>
         /// Return expected value for node on top of stack
@@ -80,7 +80,7 @@ namespace DataStructuresTest
         public void Instantiate_An_Empty_Stack()
         {
             Stack<int> stack = new Stack<int>();            
-            Assert.True(stack.isEmpty());
+            Assert.True(stack.IsEmpty());
         }
         [Fact]
         public void Using_Pop_On_An_Empty_Stack_Raises_Null_Excpetion()

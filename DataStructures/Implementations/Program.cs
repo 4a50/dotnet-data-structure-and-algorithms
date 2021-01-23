@@ -28,14 +28,14 @@
             queue.Enqueue(20);
             queue.Enqueue(25);
             queue.Enqueue(30);
-            System.Console.WriteLine($"Peek: {queue.Peek()} Empty: {queue.isEmpty()}");
+            System.Console.WriteLine($"Peek: {queue.Peek()} Empty: {queue.IsEmpty()}");
             queue.Dequeue();
             queue.Dequeue();
             queue.Dequeue();
-            System.Console.WriteLine($"Peek: {queue.Peek()} Empty: {queue.isEmpty()}");
+            System.Console.WriteLine($"Peek: {queue.Peek()} Empty: {queue.IsEmpty()}");
             queue.Dequeue();
             queue.Dequeue();
-            System.Console.WriteLine($"Empty: {queue.isEmpty()}");
+            System.Console.WriteLine($"Empty: {queue.IsEmpty()}");
 
 
 

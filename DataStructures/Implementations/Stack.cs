@@ -34,7 +34,7 @@
         /// Return a boolean on the current state of the stack.
         /// </summary>
         /// <returns></returns>
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             if (Top != null) return false;
             return true;

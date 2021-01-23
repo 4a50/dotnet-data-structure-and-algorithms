@@ -71,7 +71,7 @@ namespace DataStructuresTest
             queue.Dequeue();
             queue.Dequeue();
 
-            Assert.True(queue.isEmpty());
+            Assert.True(queue.IsEmpty());
             Assert.Null(queue.Front);
         }
         /// <summary>

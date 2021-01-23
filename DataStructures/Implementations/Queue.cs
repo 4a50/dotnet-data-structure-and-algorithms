@@ -28,7 +28,7 @@ namespace DataStructures
             return Front.Value;
         }
 
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             if (Front != null) return false;
             return true;
