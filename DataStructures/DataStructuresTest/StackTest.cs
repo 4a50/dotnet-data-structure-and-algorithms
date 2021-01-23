@@ -26,7 +26,7 @@ namespace DataStructuresTest
             stack.Push(3);
             stack.Push(5);
             stack.Push(7);
-            Assert.Equal(7, stack.Peek());
+            Assert.Equal(7, stack.Top.Value);
         }
         /// <summary>
         /// Successfully removes a Node from the Top of the Stack
@@ -40,7 +40,7 @@ namespace DataStructuresTest
             stack.Push(5);
             stack.Push(7);
             stack.Pop();
-            Assert.Equal(5, stack.Peek());
+            Assert.Equal(5, stack.Top.Value);
 
         }
         /// <summary>
@@ -83,10 +83,10 @@ namespace DataStructuresTest
             Assert.True(stack.isEmpty());
         }
         [Fact]
-        public void Using_Pop_On_An_Empty_Stack_Raises_An_Excpetion()
+        public void Using_Pop_On_An_Empty_Stack_Raises_Null_Excpetion()
         {
-            Stack stack = new Stack();
-            Assert.Throws<NullReferenceException>(stack.Pop);
+            Stack stack = new Stack();            
+            Assert.Throws<NullReferenceException>(()=>stack.Pop());
 
         }
     }
