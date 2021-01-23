@@ -26,11 +26,11 @@ namespace DataStructures
             Console.WriteLine(ZipLists(aList, bList).Value);
             aList.Print();
         }
-        public static Node ZipLists(LinkedList aList, LinkedList bList)
+        public static Node<int> ZipLists(LinkedList aList, LinkedList bList)
         {
-            Node a = aList.Head;
-            Node b = bList.Head;
-            Node c = b.Next;
+            Node<int> a = aList.Head;
+            Node<int> b = bList.Head;
+            Node<int> c = b.Next;
 
             while (b.Next != null)
             {

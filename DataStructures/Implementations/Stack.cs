@@ -1,15 +1,15 @@
 ﻿namespace DataStructures
 {
-    public class Stack
+    public class Stack<T>
     {
-        public Node Top { get; set; }
+        public Node<T> Top { get; set; }
         /// <summary>
         /// Add a node to a stack
         /// </summary>
         /// <param name="value"></param>
-        public void Push(int value)
+        public void Push(T value)
         {
-            Node newNode = new Node(value);
+            Node<T> newNode = new Node<T>(value);
             newNode.Next = Top;
             Top = newNode;
         }
@@ -18,7 +18,7 @@
         /// </summary>
         public void Pop()
         {
-            Node tempNode = Top.Next;
+            Node<T> tempNode = Top.Next;
             Top = tempNode;
         }
         /// <summary>
@@ -26,7 +26,7 @@
         /// will be raised.
         /// </summary>
         /// <returns></returns>
-        public int Peek()
+        public T Peek()
         {
             return Top.Value;
         }

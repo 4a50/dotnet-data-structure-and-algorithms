@@ -1,14 +1,17 @@
-﻿namespace DataStructures
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+namespace DataStructures
 {
-    public class Queue
+    public class Queue<T>
     {
-        public Node Front { get; set; }
-        public Node Rear { get; set; }
+        public Node<T> Front { get; set; }
+        public Node<T> Rear { get; set; }
 
 
-        public void Enqueue(int value)
+        public void Enqueue(T value)
         {
-            Node newNode = new Node(value);
+            Node<T> newNode = new Node<T>(value);
             if (Front == null) { Front = newNode; Rear = newNode; }
             //else if (Front.Next == null) { Front.Next = newNode; }
             Rear.Next = newNode;
@@ -17,10 +20,10 @@
 
         public void Dequeue()
         {
-            Node tempNode = Front.Next;
+            Node<T> tempNode = Front.Next;
             Front = tempNode;
         }        
-        public int Peek()
+        public T Peek()
         {
             return Front.Value;
         }

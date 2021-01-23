@@ -11,9 +11,9 @@ namespace DataStructuresTest
         [Fact]
         public void Enqueue_To_A_Queue()
         {
-            Queue queue = new Queue();
-            queue.Enqueue(10);
-            Assert.Equal(10, queue.Front.Value);
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("JPJ");
+            Assert.Equal("JPJ", queue.Front.Value);
         }
         /// <summary>
         /// Able to enqueue multiple nodes to the Queue.  Last node encueued should equal
@@ -22,7 +22,7 @@ namespace DataStructuresTest
         [Fact]
         public void Enqueue_Multiple_Nodes_To_Queue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             queue.Enqueue(10);            
             queue.Enqueue(564);            
             queue.Enqueue(15);
@@ -34,7 +34,7 @@ namespace DataStructuresTest
         [Fact]
         public void Dequeue_Node_From_Queue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             queue.Enqueue(10);
             queue.Enqueue(564);
             queue.Enqueue(15);
@@ -51,7 +51,7 @@ namespace DataStructuresTest
         [Fact]
         public void Peek_At_Front_Node_In_Queue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             queue.Enqueue(10);
             queue.Enqueue(564);
             queue.Enqueue(15);
@@ -63,7 +63,7 @@ namespace DataStructuresTest
         [Fact]
         public void Empty_A_Queue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             queue.Enqueue(10);
             queue.Enqueue(564);
             queue.Enqueue(15);
@@ -80,13 +80,13 @@ namespace DataStructuresTest
         [Fact]
         public void Instantiate_An_Empty_Queue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             Assert.Null(queue.Front);
         }
         [Fact]
         public void Peek_On_An_Empty_Queue_Raises_Null_Excpetion()
         {
-            Queue queue = new Queue();            
+            Queue<int> queue = new Queue<int>();            
             Assert.Throws<NullReferenceException>(()=>queue.Peek());
         }
     }

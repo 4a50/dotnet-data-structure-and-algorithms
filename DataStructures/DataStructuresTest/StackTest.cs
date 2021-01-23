@@ -11,7 +11,7 @@ namespace DataStructuresTest
         [Fact]
         public void Push_Node_Onto_A_Stack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
             stack.Push(5);            
             Assert.Equal(5, stack.Peek());
         }
@@ -21,7 +21,7 @@ namespace DataStructuresTest
         [Fact]
         public void Push_Multiple_Nodes_From_A_Stack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
             stack.Push(1);
             stack.Push(3);
             stack.Push(5);
@@ -34,7 +34,7 @@ namespace DataStructuresTest
         [Fact]
         public void Remove_Node_From_Stack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
             stack.Push(1);
             stack.Push(3);
             stack.Push(5);
@@ -49,7 +49,7 @@ namespace DataStructuresTest
         [Fact]
         public void Pop_All_Nodes_From_A_Stack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
             stack.Push(1);
             stack.Push(3);
             stack.Push(5);
@@ -66,7 +66,7 @@ namespace DataStructuresTest
         [Fact]
         public void Peek_At_Node_On_Top_Of_Stack()
         {
-            Stack stack = new Stack();
+            Stack<int> stack = new Stack<int>();
             stack.Push(1);
             stack.Push(3);
             stack.Push(5);
@@ -79,13 +79,13 @@ namespace DataStructuresTest
         [Fact]
         public void Instantiate_An_Empty_Stack()
         {
-            Stack stack = new Stack();            
+            Stack<int> stack = new Stack<int>();            
             Assert.True(stack.isEmpty());
         }
         [Fact]
         public void Using_Pop_On_An_Empty_Stack_Raises_Null_Excpetion()
         {
-            Stack stack = new Stack();            
+            Stack<int> stack = new Stack<int>();            
             Assert.Throws<NullReferenceException>(()=>stack.Pop());
 
         }

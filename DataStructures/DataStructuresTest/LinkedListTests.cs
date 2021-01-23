@@ -30,7 +30,7 @@ namespace DataStructuresTest
         {
             // H(1)
             LinkedList testList = new LinkedList(1);
-            Node oldHead = testList.Head;
+            Node<int> oldHead = testList.Head;
 
             // H(2) -> (1)
             testList.Insert(2);

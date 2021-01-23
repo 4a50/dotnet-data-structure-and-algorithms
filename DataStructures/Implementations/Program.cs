@@ -21,7 +21,7 @@
             //stack.Push(17);
             //stack.Push(16);
 
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
 
             queue.Enqueue(5);
             queue.Enqueue(10);
