@@ -3,9 +3,5 @@
 ## Author
 JP Jones
  
-### Data Structures
-[]()
-
-### Code Challenges
-
+[Data Structure Implementations](./DataStructures/Implementations/README.md)
 [Linked Lists](./CodeChallenges/LinkedLists/README.md)

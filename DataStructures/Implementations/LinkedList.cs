@@ -5,7 +5,7 @@ namespace DataStructures
     public class LinkedList
     {
 
-        public Node Head { get; set; }
+        public Node<int> Head { get; set; }
         ///<summary>
         ///Empty Linked List
         ///Usage: LinkedList my List = new LinkedList();
@@ -19,7 +19,7 @@ namespace DataStructures
         /// <param name="value"></param>
         public LinkedList(int value)
         {
-            Node node = new Node(value);
+            Node<int> node = new Node<int>(value);
             Head = node;
         }
         //Methods
@@ -28,7 +28,7 @@ namespace DataStructures
         public string Print()
         {
             string output = "";
-            Node current = Head;
+            Node<int> current = Head;
             while (current != null)
             {
                 Console.Write($"[{current.Value}] => ");
@@ -41,7 +41,7 @@ namespace DataStructures
         }
 
         //2nd Method - Recursive
-        public string PrintR(Node node)
+        public string PrintR(Node<int> node)
         {
             string output = "";
             if (node == null)
@@ -58,13 +58,13 @@ namespace DataStructures
 
         public void Insert(int value)
         {
-            Node node = new Node(value);
+            Node<int> node = new Node<int>(value);
             node.Next = Head;
             Head = node;
         }
         public bool Includes(int value)
         {
-            Node currentNode = Head;
+            Node<int> currentNode = Head;
             while (currentNode.Next != null)
             {
                 if (currentNode.Value == value) { return true; }
@@ -74,12 +74,12 @@ namespace DataStructures
         }
         public int Append(int value)
         {
-            Node currentNode = Head;
+            Node<int> currentNode = Head;
             while (currentNode != null)
             {
                 if (currentNode.Next == null)
                 {
-                    Node newNode = new Node(value);
+                    Node<int> newNode = new Node<int>(value);
                     currentNode.Next = newNode;
                     return newNode.Value;
                 }
@@ -91,12 +91,12 @@ namespace DataStructures
 
         public int InsertAfter(int value, int newValue)
         {
-            Node currentNode = Head;
+            Node<int> currentNode = Head;
             while (currentNode.Next != null)
             {
                 if (currentNode.Value == value)
                 {
-                    Node newNode = new Node(newValue);
+                    Node<int> newNode = new Node<int>(newValue);
                     newNode.Next = currentNode.Next;
                     currentNode.Next = newNode;
                     return newNode.Next.Value;
@@ -107,14 +107,14 @@ namespace DataStructures
         }
         public int InsertBefore(int value, int newValue)
         {
-            Node oldNode = null;
-            Node currentNode = Head;
+            Node<int> oldNode = null;
+            Node<int> currentNode = Head;
             while (currentNode.Next != null)
             {
                 if (currentNode.Value == value)
                 {
                     Console.WriteLine($"Found {currentNode.Value}");
-                    Node newNode = new Node(newValue);
+                    Node<int> newNode = new Node<int>(newValue);
                     oldNode.Next = newNode;
                     newNode.Next = currentNode;
                     return newNode.Next.Value;
@@ -131,7 +131,7 @@ namespace DataStructures
         /// <returns></returns>
         public int LocateKthNodeFromTail(int k)
         {
-            Node currentNode = Head;
+            Node<int> currentNode = Head;
             // Set the lengthList to one, to take into account the initial setting
             // of the Head as the currentNode
             int lengthList = 1;

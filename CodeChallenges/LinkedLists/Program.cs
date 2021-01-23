@@ -22,15 +22,15 @@ namespace DataStructures
             Console.WriteLine("A List");
             aList.Print();
             Console.WriteLine("B List");
-            bList.Print();            
-            Console.WriteLine(ZipLists(aList, bList).Value);            
+            bList.Print();
+            Console.WriteLine(ZipLists(aList, bList).Value);
             aList.Print();
         }
-        public static Node ZipLists(LinkedList aList, LinkedList bList)
+        public static Node<int> ZipLists(LinkedList aList, LinkedList bList)
         {
-            Node a = aList.Head;
-            Node b = bList.Head;
-            Node c = b.Next;
+            Node<int> a = aList.Head;
+            Node<int> b = bList.Head;
+            Node<int> c = b.Next;
 
             while (b.Next != null)
             {
