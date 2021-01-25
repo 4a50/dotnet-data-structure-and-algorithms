@@ -23,8 +23,8 @@ namespace DataStructuresTest
         public void Enqueue_Multiple_Nodes_To_Queue()
         {
             Queue<int> queue = new Queue<int>();
-            queue.Enqueue(10);            
-            queue.Enqueue(564);            
+            queue.Enqueue(10);
+            queue.Enqueue(564);
             queue.Enqueue(15);
             Assert.Equal(15, queue.Rear.Value);
         }
@@ -86,8 +86,8 @@ namespace DataStructuresTest
         [Fact]
         public void Peek_On_An_Empty_Queue_Raises_Null_Excpetion()
         {
-            Queue<int> queue = new Queue<int>();            
-            Assert.Throws<NullReferenceException>(()=>queue.Peek());
+            Queue<int> queue = new Queue<int>();
+            Assert.Throws<NullReferenceException>(() => queue.Peek());
         }
     }
 }

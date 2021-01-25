@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataStructures\Implementations\Implementations.csproj" />
+    <ProjectReference Include="..\QueueWithStacks2\QueueWithStacks2.csproj" />
+  </ItemGroup>
+
+</Project>

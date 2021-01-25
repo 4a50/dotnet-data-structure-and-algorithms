@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-namespace DataStructures
+﻿namespace DataStructures
 {
     public class Queue<T>
     {
@@ -22,7 +19,7 @@ namespace DataStructures
         {
             Node<T> tempNode = Front.Next;
             Front = tempNode;
-        }        
+        }
         public T Peek()
         {
             return Front.Value;
