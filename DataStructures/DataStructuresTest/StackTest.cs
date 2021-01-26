@@ -12,7 +12,7 @@ namespace DataStructuresTest
         public void Push_Node_Onto_A_Stack()
         {
             Stack<int> stack = new Stack<int>();
-            stack.Push(5);            
+            stack.Push(5);
             Assert.Equal(5, stack.Peek());
         }
         /// <summary>
@@ -79,14 +79,14 @@ namespace DataStructuresTest
         [Fact]
         public void Instantiate_An_Empty_Stack()
         {
-            Stack<int> stack = new Stack<int>();            
+            Stack<int> stack = new Stack<int>();
             Assert.True(stack.IsEmpty());
         }
         [Fact]
         public void Using_Pop_On_An_Empty_Stack_Raises_Null_Excpetion()
         {
-            Stack<int> stack = new Stack<int>();            
-            Assert.Throws<NullReferenceException>(()=>stack.Pop());
+            Stack<int> stack = new Stack<int>();
+            Assert.Throws<NullReferenceException>(() => stack.Pop());
 
         }
     }

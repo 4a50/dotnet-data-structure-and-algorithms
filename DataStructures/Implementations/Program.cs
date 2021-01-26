@@ -1,4 +1,5 @@
-﻿namespace DataStructures
+﻿
+namespace DataStructures
 {
     class Program
     {
@@ -36,6 +37,8 @@
             queue.Dequeue();
             queue.Dequeue();
             System.Console.WriteLine($"Empty: {queue.IsEmpty()}");
+
+
 
 
 
