@@ -63,7 +63,7 @@ namespace CodeChallengeTests
             testQueue.stack1.Push(15);
             testQueue.stack1.Push(20);
             testQueue.stack1.Push(25);
-            
+
             Assert.Equal(10, testQueue.Dequeue());
         }
         [Fact]
