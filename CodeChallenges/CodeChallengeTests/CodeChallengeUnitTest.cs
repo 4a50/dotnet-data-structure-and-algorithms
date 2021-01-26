@@ -42,5 +42,35 @@ namespace CodeChallengeTests
             bList.Insert(1);
             Assert.NotEqual(10, DataStructures.Program.ZipLists(aList, bList).Value);
         }
+        [Fact]
+        public void Psuedo_Queue_Test_Enqueue_Int()
+        {
+            QueueWithStacks testQueue = new QueueWithStacks();
+            testQueue.stack1.Push(5);
+            testQueue.stack1.Push(10);
+            testQueue.stack1.Push(15);
+            testQueue.stack1.Push(20);
+            testQueue.stack1.Push(25);
+            testQueue.Enqueue(30);
+            Assert.Equal(30, testQueue.stack1.Top.Value);
+        }
+        [Fact]
+        public void Psuedo_Queue_Test_Dequeue_Int()
+        {
+            QueueWithStacks testQueue = new QueueWithStacks();
+            testQueue.stack1.Push(5);
+            testQueue.stack1.Push(10);
+            testQueue.stack1.Push(15);
+            testQueue.stack1.Push(20);
+            testQueue.stack1.Push(25);
+            
+            Assert.Equal(10, testQueue.Dequeue());
+        }
+        [Fact]
+        public void Psuedo_Queue_Dequeue_Empty()
+        {
+            QueueWithStacks testQueue = new QueueWithStacks();
+            Assert.Equal(-1, testQueue.Dequeue());
+        }
     }
 }

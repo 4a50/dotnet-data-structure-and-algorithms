@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+
 namespace DataStructures
 {
     public class QueueWithStacks
@@ -10,31 +12,30 @@ namespace DataStructures
         public QueueWithStacks()
         {
             stack1 = new Stack<int>();
-            stack2 = new Stack<int>();
-            stack1.Push(1);
-            stack1.Push(2);
-            stack1.Push(3);
-            stack1.Push(4);
-            stack1.Push(5);
+            stack2 = new Stack<int>();            
         }
         public void Enqueue(int value)
         {
             stack1.Push(value);
         }
 
-        public void Dequeue()
-        {          
+        public int Dequeue()
+        {
+            if (stack1.Top == null) { return -1; }
+            int valPopped = 0;
             while (stack1.Top != null)
-            {
+            {   
                 stack2.Push(stack1.Top.Value);
-                stack1.Pop();
+                stack1.Pop();             
             }
-            stack2.Pop();
+            stack2.Pop();            
+            valPopped = stack2.Top.Value;
             while (stack2.Top != null)
             {
                 stack1.Push(stack2.Top.Value);
                 stack2.Pop();
             }
+            return valPopped;
         }
     }
 }
