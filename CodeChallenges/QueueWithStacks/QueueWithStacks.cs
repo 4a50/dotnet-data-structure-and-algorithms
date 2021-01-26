@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿
 
+using System;
 
-namespace QueueWithStacks
+namespace DataStructures
 {
     public class QueueWithStacks
     {
@@ -11,27 +12,31 @@ namespace QueueWithStacks
         public QueueWithStacks()
         {
             stack1 = new Stack<int>();
-            stack2 = new Stack<int>();
+            stack2 = new Stack<int>();            
         }
         public void Enqueue(int value)
         {
             stack1.Push(value);
         }
 
-        public void Dequeue()
+        public int Dequeue()
         {
-            while (stack1 != null)
-            {
-                stack2.Push(stack1.Top);
-                stack1.Pop();
+            if (stack1.Top == null) { return -1; }
+            int valPopped = 0;
+            while (stack1.Top != null)
+            {   
+                stack2.Push(stack1.Top.Value);
+                stack1.Pop();             
             }
-            stack2.Pop();
-
+            stack2.Pop();            
+            valPopped = stack2.Top.Value;
             while (stack2.Top != null)
             {
-                stack1.Push(stack2.Top);
+                stack1.Push(stack2.Top.Value);
                 stack2.Pop();
             }
+            return valPopped;
         }
     }
 }
+
