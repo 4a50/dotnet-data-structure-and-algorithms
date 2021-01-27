@@ -1,4 +1,5 @@
-﻿namespace DataStructures
+﻿using FifoAnimalShelter;
+namespace DataStructures
 {
     class Program
     {
