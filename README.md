@@ -8,3 +8,5 @@ JP Jones
 [Linked Lists](./CodeChallenges/LinkedLists/README.md)
 
 [Psuedo-Queue](./CodeChallenges/QueueWithStacks/README.md)
+
+[FIFO Animal Shelter](./CodeChallenges/FIFOAnimalShelter/README.md)
