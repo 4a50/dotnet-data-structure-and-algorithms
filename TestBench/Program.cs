@@ -3,7 +3,7 @@ namespace DataStructures
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             AnimalShelter testShelter = new AnimalShelter();
             testShelter.Enqueue(new Cat(1));

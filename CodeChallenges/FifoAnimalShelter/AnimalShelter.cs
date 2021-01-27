@@ -1,48 +1,19 @@
 ﻿using System.Collections.Generic;
 
 namespace FifoAnimalShelter
-
 {
-    public abstract class Animal
-    {
-        public abstract string Species { get; set; }
-        public abstract Animal Next { get; set; }
-        public abstract int UniqueID { get; set; }
-    }
-
-
-
-    public class Dog : Animal
-    {
-        public override string Species { get; set; } = "Dog";
-        public override Animal Next { get; set; }
-        public override int UniqueID { get; set; }
-        public Dog(int val)
-        {
-            UniqueID = val;
-        }
-    }
-
-    public class Cat : Animal
-    {
-        public override string Species { get; set; } = "Cat";
-        public override Animal Next { get; set; }
-        public override int UniqueID { get; set; }
-        public Cat(int val)
-        {
-            UniqueID = val;
-        }
-
-    }
-
+    
     public class AnimalShelter
     {
 
         public Animal Front { get; set; }
         public Animal Rear { get; set; }
-
-        public Queue<Animal> queue = new Queue<Animal>();
-
+        public Queue<Dog> Queue { get; set; }
+        public Queue<Cat> Queue { get; set; }
+        public AnimalShelter()
+        {           
+        }
+        
         /// <summary>
         /// Will add the animal to the back of the queue
         /// </summary>
@@ -50,6 +21,7 @@ namespace FifoAnimalShelter
         /// <returns></returns>
         public Animal Enqueue(Animal animal)
         {
+            
             if (Front == null)
             {
                 Front = animal;
@@ -67,6 +39,10 @@ namespace FifoAnimalShelter
         /// <returns></returns>
         public Animal Dequeue(string pref)
         {
+            if (pref == "Dog")
+            {
+                Dog.Q
+            }
             Animal tempAnimal = Front;
             if (pref == Front.Species)
             {
