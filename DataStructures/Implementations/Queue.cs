@@ -9,8 +9,7 @@
         public void Enqueue(T value)
         {
             Node<T> newNode = new Node<T>(value);
-            if (Front == null) { Front = newNode; Rear = newNode; }
-            //else if (Front.Next == null) { Front.Next = newNode; }
+            if (Front == null) { Front = newNode; Rear = newNode; }         
             Rear.Next = newNode;
             Rear = newNode;
         }
