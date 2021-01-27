@@ -63,7 +63,7 @@ namespace CodeChallengeTests
             testQueue.stack1.Push(15);
             testQueue.stack1.Push(20);
             testQueue.stack1.Push(25);
-            
+
             Assert.Equal(10, testQueue.Dequeue());
         }
         [Fact]
@@ -71,6 +71,30 @@ namespace CodeChallengeTests
         {
             QueueWithStacks testQueue = new QueueWithStacks();
             Assert.Equal(-1, testQueue.Dequeue());
+        }
+
+        [Fact]
+        public void Animal_Shelter_Enqueue()
+        {
+            AnimalShelter testShelter = new AnimalShelter();
+            testShelter.Enqueue(new Cat());
+            testShelter.Enqueue(new Cat());
+            testShelter.Enqueue(new Cat());
+            testShelter.Enqueue(new Dog());
+
+            Assert.Equal("Dog", testShelter.Rear.Species);
+        }
+        [Fact]
+        public void Animal_Shelter_Dequeue_To_Pref()
+        {
+            AnimalShelter testShelter = new AnimalShelter();
+            testShelter.Enqueue(new Cat());
+            testShelter.Enqueue(new Cat());
+            testShelter.Enqueue(new Dog());
+            testShelter.Enqueue(new Cat());
+
+            Assert.IsType<Dog>(testShelter.Dequeue("Dog"));
+
         }
     }
 }
