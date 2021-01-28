@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueWithStacks", "CodeChal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FifoAnimalShelter", "CodeChallenges\FifoAnimalShelter\FifoAnimalShelter.csproj", "{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi-Bracket-Validation", "CodeChallenges\ClassLibrary1\Multi-Bracket-Validation.csproj", "{4A030C16-C479-4904-86E4-261A8BA20B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi-Bracket-Validation", "CodeChallenges\Multi-Bracket-Validation\Multi-Bracket-Validation.csproj", "{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,10 +56,10 @@ Global
 		{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A030C16-C479-4904-86E4-261A8BA20B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A030C16-C479-4904-86E4-261A8BA20B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A030C16-C479-4904-86E4-261A8BA20B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A030C16-C479-4904-86E4-261A8BA20B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,7 +71,7 @@ Global
 		{E74AD3A8-A30F-4B81-A504-5B0902435AA0} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{CDA4EC1A-EC7B-49AD-8812-DCED18559258} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
-		{4A030C16-C479-4904-86E4-261A8BA20B25} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
+		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D8CBDA3-1372-4033-8C11-81DBE1CC27E8}
