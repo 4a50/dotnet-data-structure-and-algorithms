@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\DataStructures\Implementations\Implementations.csproj" />
-    <ProjectReference Include="..\..\FIFOAnimalShelter\FIFOAnimalShelter.csproj" />
+    <ProjectReference Include="..\ClassLibrary1\Multi-Bracket-Validation.csproj" />
     <ProjectReference Include="..\LinkedLists\LinkedLists.csproj" />
     <ProjectReference Include="..\QueueWithStacks\QueueWithStacks.csproj" />
   </ItemGroup>
