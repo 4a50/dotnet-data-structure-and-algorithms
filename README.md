@@ -9,4 +9,7 @@ JP Jones
 
 [Psuedo-Queue](./CodeChallenges/QueueWithStacks/README.md)
 
-[FIFO Animal Shelter](./CodeChallenges/FIFOAnimalShelter/README.md)
+[--BROKE-- FIFO Animal Shelter](./CodeChallenges/FIFOAnimalShelter/README.md)
+
+[Multi-Bracket-Validation](./CodeChallenges/Multi-Bracket-Validation/README.md)
+
