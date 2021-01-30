@@ -5,7 +5,7 @@ namespace FifoAnimalShelter
 
   public class AnimalShelter
   {
-    Queue<Animal> animalQueue = new Queue<Animal>();
+    public Queue<Animal> animalQueue = new Queue<Animal>();
 
     public AnimalShelter()
     {
@@ -31,20 +31,32 @@ namespace FifoAnimalShelter
     public Animal Dequeue(string pref)
     {
       Animal tempAnimal;
-      if (animalQueue != null)
-      {
-        tempAnimal = animalQueue.Peek();
-        if (tempAnimal.Species == pref)
+      Stack<Animal> searchStack = new Stack<Animal>();
+        tempAnimal = animalQueue.Front.Value;
+      // Searched the Animal Queue for the preferred animal
+        while (animalQueue.Front != null)
         {
+          tempAnimal = animalQueue.Front.Value;
+          if (tempAnimal.Species == pref)
+          {
+            animalQueue.Dequeue();
+            break;
+          }
+          searchStack.Push(tempAnimal);
           animalQueue.Dequeue();
-          return tempAnimal;
         }
-        else
-        {
-          //Do logic to dequeue 
-        }
+      //If it does not find that animal set temp to null
+      tempAnimal = null;
+      //Enqueues the stack to the animalQueue
+        while (searchStack.Top != null)
+      {
+        animalQueue.Enqueue(searchStack.Top.Value);
+        searchStack.Pop();
       }
-      return new Animal("Dog");
-    }
+      
+      return tempAnimal;
+      }
+      
+    
   }
 }

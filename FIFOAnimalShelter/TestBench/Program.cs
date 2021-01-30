@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using FifoAnimalShelter;
+using System;
+using System.Collections.Generic;
 using Trees;
 
 namespace DataStuctures
@@ -33,8 +35,33 @@ namespace DataStuctures
       //test = bt.PostOrder(bt.Root, new List<int>());
       //foreach (int i in test) { System.Console.Write($" [{i}]"); }
       //System.Console.WriteLine();
-      BinarySearchTree bst = new BinarySearchTree(50);
-      bst.Add(60);      
+      //BinarySearchTree bst = new BinarySearchTree(50);
+      //bst.Add(60);      
+
+      AnimalShelter animalShelter = new AnimalShelter();
+
+      animalShelter.Enqueue(new Animal("Cat"));
+      animalShelter.Enqueue(new Animal("Dog"));
+      animalShelter.Enqueue(new Animal("Dog"));
+      animalShelter.Enqueue(new Animal("Dog"));
+      animalShelter.Enqueue(new Animal("Cat"));
+      try
+      {
+        string selectedAnimal = animalShelter.Dequeue("Pig").Species;
+        System.Console.WriteLine($"Animal Given a Home: {selectedAnimal}");
+        Console.WriteLine("Animals left in shelter");
+        while (animalShelter.animalQueue.Front != null)        {
+          Console.WriteLine($"Animal: {animalShelter.animalQueue.Front.Value.Species}");
+          animalShelter.animalQueue.Dequeue();
+        }
+
+      } catch (NullReferenceException e)
+      {
+        Console.WriteLine("Null Reference Found.  No Animal in shelter");
+        Console.WriteLine(e.Message);
+      }
+      catch { Console.WriteLine("General Exception"); }
+
     }
   }
 }
