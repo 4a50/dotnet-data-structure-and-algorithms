@@ -4,10 +4,9 @@ namespace Trees
 {
   class BinaryTree<T>
   {
-    BinarySearchTree<T> bst = new BinarySearchTree<T>();
-    public T[] PreOrder(Node<T> currentNode)
+    public Node<T> Root { get; set; }
+    public T[] PreOrder(Node<T> currentNode, List<T> nodeValues)
     {
-      List<T> nodeValues = new List<T>();
       if (currentNode == null)
       {
         T[] returnArray = nodeValues.ToArray();
@@ -15,8 +14,8 @@ namespace Trees
       }
       nodeValues.Add(currentNode.Value);
 
-      if (currentNode.Left != null) { PreOrder(currentNode.Left); }
-      if (currentNode.Right != null) { PreOrder(currentNode.Right); }
+      if (currentNode.Left != null) { PreOrder(currentNode.Left, nodeValues); }
+      if (currentNode.Right != null) { PreOrder(currentNode.Right, nodeValues); }
 
       return null;
     }
@@ -28,18 +27,26 @@ namespace Trees
         T[] returnArray = nodeValues.ToArray();
         return returnArray;
       }
+      if (currentNode.Left != null) { PreOrder(currentNode.Left, nodeValues); }
       nodeValues.Add(currentNode.Value);
-      {
-        if (currentNode.Left != null) { PreOrder(currentNode.Left); }
-        if (currentNode.Right != null) { PreOrder(currentNode.Right); }
-      }
-      return null;
-    }
-    public T[] WalkThisWay()
-    {
-      T[] randoArray = new T[0];
+      if (currentNode.Right != null) { PreOrder(currentNode.Right, nodeValues); }
 
-      return randoArray;
+      return null;
+
+    }
+    public T[] PostOrder(Node<T> currentNode)
+    {
+      List<T> nodeValues = new List<T>();
+      if (currentNode == null)
+      {
+        T[] returnArray = nodeValues.ToArray();
+        return returnArray;
+      }
+      if (currentNode.Left != null) { PreOrder(currentNode.Left, nodeValues); }
+      if (currentNode.Right != null) { PreOrder(currentNode.Right, nodeValues); }
+      nodeValues.Add(currentNode.Value);
+
+      return null;
 
     }
 
