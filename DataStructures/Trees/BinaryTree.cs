@@ -7,8 +7,8 @@ namespace Trees
     public Node<T> Root { get; set; }
 
     public BinaryTree() { }
-    
-    public BinaryTree (T value)
+
+    public BinaryTree(T value)
     {
       Root = new Node<T>(value);
     }
@@ -21,7 +21,7 @@ namespace Trees
     public T[] PreOrder(Node<T> currentNode, List<T> nodeValues)
     {
       if (currentNode == null)
-      {        
+      {
         return nodeValues.ToArray();
       }
       nodeValues.Add(currentNode.Value);
@@ -39,10 +39,10 @@ namespace Trees
     public T[] InOrder(Node<T> currentNode, List<T> nodeValues)
     {
       if (currentNode == null) return nodeValues.ToArray();
-      
-      if (currentNode.Left != null)  InOrder(currentNode.Left, nodeValues); 
+
+      if (currentNode.Left != null) InOrder(currentNode.Left, nodeValues);
       nodeValues.Add(currentNode.Value);
-      if (currentNode.Right != null)  InOrder(currentNode.Right, nodeValues); 
+      if (currentNode.Right != null) InOrder(currentNode.Right, nodeValues);
 
       return nodeValues.ToArray();
     }
@@ -63,6 +63,6 @@ namespace Trees
       return nodeValues.ToArray();
 
     }
-    }
   }
+}
 

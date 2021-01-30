@@ -39,7 +39,7 @@ namespace DataStructuresTest
       bt.Root.Right.Left = new Node<int>(81);
       bt.Root.Right.Right = new Node<int>(22);
 
-      int[] testArray = new int[] { 2,752,743,756,81,705,22 };
+      int[] testArray = new int[] { 2, 752, 743, 756, 81, 705, 22 };
       Assert.Equal(testArray, bt.InOrder(bt.Root, new List<int>()));
 
     }
@@ -58,7 +58,7 @@ namespace DataStructuresTest
       bt.Root.Right.Left = new Node<int>(81);
       bt.Root.Right.Right = new Node<int>(22);
 
-      int[] testArray = new int[] { 2,743,752,81,22,705,756};
+      int[] testArray = new int[] { 2, 743, 752, 81, 22, 705, 756 };
       Assert.Equal(testArray, bt.PostOrder(bt.Root, new List<int>()));
 
     }
@@ -69,7 +69,7 @@ namespace DataStructuresTest
     [Fact]
     public void Instantiation_Of_Empty_Binary_Tree()
     {
-      BinaryTree<int> bt = new BinaryTree<int>();          
+      BinaryTree<int> bt = new BinaryTree<int>();
       Assert.Null(bt.Root);
 
     }
@@ -84,7 +84,26 @@ namespace DataStructuresTest
       int[] testArr = new int[] { 743 };
       Assert.Equal(testArr, bt.PreOrder(bt.Root, new List<int>()));
     }
-
+    /// <summary>
+    /// Add a child to the left of the search tree value < Root
+    /// </summary>
+    [Fact]
+    public void Add_Child_To_Left_Of_Root_Node()
+    {
+      BinarySearchTree bst = new BinarySearchTree(50);
+      bst.Add(25);
+      Assert.Equal(25, bst.Root.Left.Value);
+    }
+    /// <summary>
+    /// Add a child to the right of the search tree value > Root
+    /// </summary>
+    [Fact]
+    public void Add_Child_To_Right_Of_Root_Node()
+    {
+      BinarySearchTree bst = new BinarySearchTree(50);
+      bst.Add(60);
+      Assert.Equal(60, bst.Root.Left.Value);
+    }
 
 
   }
