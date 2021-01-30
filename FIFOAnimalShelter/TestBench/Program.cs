@@ -19,14 +19,21 @@ namespace DataStuctures
       bt.Root.Right = new Node<int>(705);
       bt.Root.Right.Left = new Node<int>(81);
       bt.Root.Right.Right = new Node<int>(22);
+      
+      System.Console.Write("PreOrder:" );      
+      int[] test = bt.PreOrder(bt.Root, new List<int>());      
+      foreach (int i in test) { System.Console.Write($" [{i}]"); }
+      System.Console.WriteLine();
 
-      int[] testArray = bt.PreOrder(bt.Root, new List<int>());
-      System.Console.Write("ToOrder:");
-      foreach (int i in testArray)
-      {
-        System.Console.Write($" [{i}]");
+      System.Console.Write("OnOrder:");
+      test = bt.InOrder(bt.Root, new List<int>());
+      foreach (int i in test) { System.Console.Write($" [{i}]"); }
+      System.Console.WriteLine();
 
-      }
+      System.Console.Write("PostOrder:");
+      test = bt.PostOrder(bt.Root, new List<int>());
+      foreach (int i in test) { System.Console.Write($" [{i}]"); }
+      System.Console.WriteLine();
 
 
     }
