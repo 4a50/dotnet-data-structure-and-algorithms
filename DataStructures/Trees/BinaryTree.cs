@@ -29,14 +29,13 @@ namespace Trees
       List<T> nodeValues = new List<T>();
       if (currentNode == null)
       {
-        T[] returnArray = nodeValues.ToArray();
-        return returnArray;
+        return nodeValues.ToArray();
       }
       if (currentNode.Left != null) { PreOrder(currentNode.Left, nodeValues); }
       nodeValues.Add(currentNode.Value);
       if (currentNode.Right != null) { PreOrder(currentNode.Right, nodeValues); }
 
-      return null;
+      return ;
 
     }
     public T[] PostOrder(Node<T> currentNode)
