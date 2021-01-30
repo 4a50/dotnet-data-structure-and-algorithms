@@ -2,9 +2,14 @@
 
 namespace Trees
 {
-  class BinaryTree<T>
+  public class BinaryTree<T>
   {
     public Node<T> Root { get; set; }
+
+    public BinaryTree (T value)
+    {
+      Root = new Node<T>(value);
+    }
     public T[] PreOrder(Node<T> currentNode, List<T> nodeValues)
     {
       if (currentNode == null)

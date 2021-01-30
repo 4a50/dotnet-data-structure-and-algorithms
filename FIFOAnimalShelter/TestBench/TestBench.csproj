@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\CodeChallenges\FifoAnimalShelter\FifoAnimalShelter.csproj" />
     <ProjectReference Include="..\..\DataStructures\Implementations\Implementations.csproj" />
+    <ProjectReference Include="..\..\DataStructures\Trees\Trees.csproj" />
   </ItemGroup>
 
 </Project>
