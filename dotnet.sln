@@ -26,6 +26,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FifoAnimalShelter", "CodeCh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi-Bracket-Validation", "CodeChallenges\Multi-Bracket-Validation\Multi-Bracket-Validation.csproj", "{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBench", "FIFOAnimalShelter\TestBench\TestBench.csproj", "{20BE93F5-5154-4A44-B719-D2FA91614C58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "DataStructures\Trees\Trees.csproj", "{BBDE57AF-2B02-41DD-89E1-E26D597148EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +64,14 @@ Global
 		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20BE93F5-5154-4A44-B719-D2FA91614C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20BE93F5-5154-4A44-B719-D2FA91614C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20BE93F5-5154-4A44-B719-D2FA91614C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20BE93F5-5154-4A44-B719-D2FA91614C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBDE57AF-2B02-41DD-89E1-E26D597148EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBDE57AF-2B02-41DD-89E1-E26D597148EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBDE57AF-2B02-41DD-89E1-E26D597148EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBDE57AF-2B02-41DD-89E1-E26D597148EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +84,8 @@ Global
 		{CDA4EC1A-EC7B-49AD-8812-DCED18559258} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{4BCC9EFF-7132-4E83-A2BB-EE56B7390740} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
+		{20BE93F5-5154-4A44-B719-D2FA91614C58} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
+		{BBDE57AF-2B02-41DD-89E1-E26D597148EC} = {08F49070-8D0C-4696-8E3E-FDBAA6A41FAB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D8CBDA3-1372-4033-8C11-81DBE1CC27E8}

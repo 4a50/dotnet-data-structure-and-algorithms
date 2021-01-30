@@ -1,13 +1,12 @@
-﻿namespace FifoAnimalShelter
+﻿using DataStructures;
+
+namespace FifoAnimalShelter
 {
 
   public class AnimalShelter
   {
+    Queue<Animal> animalQueue = new Queue<Animal>();
 
-    public Animal Front { get; set; }
-    public Animal Rear { get; set; }
-    //public Queue<Dog> QueueDog { get; set; }
-    //public Queue<Cat> QueueCat { get; set; }
     public AnimalShelter()
     {
     }
@@ -19,15 +18,9 @@
     /// <returns></returns>
     public Animal Enqueue(Animal animal)
     {
+      animalQueue.Enqueue(animal);
 
-      if (Front == null)
-      {
-        Front = animal;
-        Rear = animal;
-      }
-      Rear.Next = animal;
-      Rear = animal;
-      return Rear;
+      return animal;
 
     }
     /// <summary>
@@ -37,22 +30,21 @@
     /// <returns></returns>
     public Animal Dequeue(string pref)
     {
-      if (pref == "Dog")
+      Animal tempAnimal;
+      if (animalQueue != null)
       {
-
+        tempAnimal = animalQueue.Peek();
+        if (tempAnimal.Species == pref)
+        {
+          animalQueue.Dequeue();
+          return tempAnimal;
+        }
+        else
+        {
+          //Do logic to dequeue 
+        }
       }
-      Animal tempAnimal = Front;
-      if (pref == Front.Species)
-      {
-        Front = tempAnimal.Next;
-        return Front;
-      }
-      Rear.Next = tempAnimal;
-      Rear = tempAnimal;
-      Front = Front.Next;
-
-      return null;
-
+      return new Animal("Dog");
     }
   }
 }

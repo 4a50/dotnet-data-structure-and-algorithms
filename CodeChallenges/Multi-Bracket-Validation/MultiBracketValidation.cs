@@ -21,30 +21,31 @@ namespace DataStructures
           checkStack.Push(c);
           System.Console.WriteLine("checkStackPeek: " + checkStack.Peek());
         }
-        else {
+        else
+        {
           //This will look for closing brackets.  If the closing bracket matches it's opening bracket in the stack.  It will pop it off the stack.
           switch (c)
           {
             case ']':
               if (checkStack.Peek() == '[')
-              {                
+              {
                 if (checkStack.Top != null) checkStack.Pop();
               }
               break;
             case '}':
               if (checkStack.Peek() == '{')
-              {                
+              {
                 if (checkStack.Top != null) checkStack.Pop();
               }
               break;
             case ')':
               if (checkStack.Peek() == '(')
-              {                
+              {
                 if (checkStack.Top != null) checkStack.Pop();
               }
               break;
             default:
-              
+
               break;
           }
         }
