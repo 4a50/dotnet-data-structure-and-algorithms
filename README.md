@@ -1,9 +1,10 @@
 # Data Structures and Code Challenges
 ## 401 - ASP.NET
-## Author
-JP Jones
+## Author: *JP Jones*
  
 [Data Structure Implementations](./DataStructures/Implementations/README.md)
+
+[Data Structure - Binary Trees](./DataStructures/Trees/README.md)
 
 [Linked Lists](./CodeChallenges/LinkedLists/README.md)
 
@@ -12,4 +13,6 @@ JP Jones
 [--BROKE-- FIFO Animal Shelter](./CodeChallenges/FIFOAnimalShelter/README.md)
 
 [Multi-Bracket-Validation](./CodeChallenges/Multi-Bracket-Validation/README.md)
+
+
 
