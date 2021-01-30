@@ -27,7 +27,7 @@
     /// </summary>
     /// <returns></returns>
     public T Peek()
-    {      
+    {
       return Top.Value;
     }
     /// <summary>
