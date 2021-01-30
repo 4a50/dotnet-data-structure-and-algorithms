@@ -102,7 +102,55 @@ namespace DataStructuresTest
     {
       BinarySearchTree bst = new BinarySearchTree(50);
       bst.Add(60);
-      Assert.Equal(60, bst.Root.Left.Value);
+      Assert.Equal(60, bst.Root.Right.Value);
+    }
+    /// <summary>
+    /// Instantiates an empty Binary Search Tree
+    /// </summary>
+    [Fact]
+    public void Instantiate_A_Binary_Search_Tree_With_No_Node()
+    {
+      BinarySearchTree bst = new BinarySearchTree();
+      Assert.Null(bst.Root);
+    }
+    /// <summary>
+    /// Instantiates a single not binary search tree
+    /// </summary>
+    [Fact]
+    public void Instantiate_A_Binary_Search_Tree_With_One_Node()
+    {
+      BinarySearchTree bst = new BinarySearchTree(50);
+      Assert.NotNull(bst.Root);
+    }
+    /// <summary>
+    /// Locates a value in a Binary Search Tree
+    /// </summary>
+    [Fact]
+    public static void Successfully_Locates_A_Value_In_Binary_Search_Tree()
+    {
+      BinarySearchTree bst = new BinarySearchTree(50);
+      bst.Add(30);
+      bst.Add(23);
+      bst.Add(100);
+      bst.Add(80);
+      bst.Add(90);
+      bst.Add(40);
+      Assert.True(bst.Contains(40));
+    }
+    /// <summary>
+    /// Does Not Locate a Value in a Binary Search Tree
+    /// </summary>
+    [Fact]
+    public static void Does_Not_Locates_A_Value_In_Binary_Search_Tree()
+    {
+      BinarySearchTree bst = new BinarySearchTree(50);
+      bst.Add(30);
+      bst.Add(23);
+      bst.Add(100);
+      bst.Add(80);
+      bst.Add(90);
+      bst.Add(40);
+      Assert.False(bst.Contains(200));
     }
 
 
