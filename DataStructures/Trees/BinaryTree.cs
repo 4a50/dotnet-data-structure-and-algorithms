@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataStructures;
 
 namespace Trees
 {
   public class BinaryTree<T> where T : IComparable
   {
-    public TreeNode<T> Root { get; set; }
+    public Node<T> Root { get; set; }
 
     public BinaryTree() { }
         
     public BinaryTree(T value)
     {
-      Root = new TreeNode<T>(value);
+      Root = new Node<T>(value);
     }
     /// <summary>
     /// Depth First Traversal using a Pre-Order Strategy
@@ -19,7 +20,7 @@ namespace Trees
     /// <param name="currentNode"></param>
     /// <param name="nodeValues"></param>
     /// <returns></returns>
-    public T[] PreOrder(TreeNode<T> currentNode, List<T> nodeValues)
+    public T[] PreOrder(Node<T> currentNode, List<T> nodeValues)
     {
       if (currentNode == null)
       {
@@ -37,7 +38,7 @@ namespace Trees
     /// <param name="currentNode"></param>
     /// <param name="nodeValues"></param>
     /// <returns></returns>
-    public T[] InOrder(TreeNode<T> currentNode, List<T> nodeValues)
+    public T[] InOrder(Node<T> currentNode, List<T> nodeValues)
     {
       if (currentNode == null) return nodeValues.ToArray();
 
@@ -52,7 +53,7 @@ namespace Trees
     /// <param name="currentNode"></param>
     /// <param name="nodeValues"></param>
     /// <returns></returns>
-    public T[] PostOrder(TreeNode<T> currentNode, List<T> nodeValues)
+    public T[] PostOrder(Node<T> currentNode, List<T> nodeValues)
     {
       if (currentNode == null) return nodeValues.ToArray();
 
@@ -61,7 +62,7 @@ namespace Trees
       nodeValues.Add(currentNode.Value);
       return nodeValues.ToArray();
     }
-    public T FindMax(T maxValue, TreeNode<T> curNode)
+    public T FindMax(T maxValue, Node<T> curNode)
     {      
       if (curNode == null) return maxValue;
       Console.WriteLine($"curNode: {curNode.Value}\tmaxValue: {maxValue}\tCompare: {maxValue.CompareTo(curNode.Value)}");
@@ -78,14 +79,20 @@ namespace Trees
     /// <returns></returns>
     public List<T> TraverseBreadth()
     {
-      Queue<TreeNode<T>> nodeQueue = new Queue<TreeNode<T>>();
+      DataStructures.Queue<Node<T>> nodeQueue = new DataStructures.Queue<Node<T>>();
+
       List<T> nodeList = new List<T>();
       nodeQueue.Enqueue(Root);
-      TreeNode<T> curNode = new TreeNode<T>();
+      Node<T> curNode = new Node<T>();
 
       while (curNode != null)
       {
-        curNode = nodeQueue.Dequeue();
+        
+        if (nodeQueue.Front != null)
+        {
+          curNode = nodeQueue.Dequeue().Value;
+        }
+
         if (curNode != null) nodeList.Add(curNode.Value);
         if (curNode.Left != null) nodeQueue.Enqueue(curNode.Left);
         if (curNode.Right != null) nodeQueue.Enqueue(curNode.Right);

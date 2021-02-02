@@ -7,6 +7,7 @@
     public Node<T> Left { get; set; }
     public Node<T> Right { get; set; }
 
+    public Node() { }
 
     ///<summary>
     ///Constructor for a Node

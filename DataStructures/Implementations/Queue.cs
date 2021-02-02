@@ -14,10 +14,11 @@
       Rear = newNode;
     }
 
-    public void Dequeue()
+    public Node<T> Dequeue()
     {
       Node<T> tempNode = Front.Next;
       Front = tempNode;
+      return tempNode;
     }
     public T Peek()
     {
