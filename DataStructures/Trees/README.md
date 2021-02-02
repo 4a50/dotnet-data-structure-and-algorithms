@@ -56,7 +56,42 @@ Binary Search Tree | O(LOGn)| O(1)
 #### Binary Tree Whiteboard
 
 ![Binary Tree Whiteboard](./assets/BinaryTree.png)
+
 ---
+## Max Value Method Addition
+*Author: JP Jones*
+
+---
+
+### Problem Domain
+
+Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available return the maximum value stored in the tree. 
+You can assume that the values stored in the Binary Tree will be numeric.
+
+---
+
+### Inputs and Expected Outputs
+ Binary Tree Traversals
+
+| Input | Expected Output |
+| :----------------------- | :----------- |
+| Tree [123,441,212,3,5,21] | 441|
+
+---
+
+### Big O
+
+
+| Time | Space |
+| :----------- | :----------- |
+O(n) | O(1)
+
+---
+### MaxValue WhiteBoard
+
+![FindMaxValue Method](./assets/MaxValue.png)
+
 
 ### Change Log
 1.0: Initial Submission - 29 January 2121
+2.0: Addition of MaxValue method - 1 February 2021
