@@ -71,9 +71,29 @@ namespace Trees
       if (curNode.Left != null) FindMax(maxValue, curNode.Left);
       if (curNode != null) FindMax(maxValue, curNode.Right);
       return maxValue;
-    }    
+    }
+    /// <summary>
+    /// Traverses the Binary Tree using a Breadth First Strategy
+    /// </summary>
+    /// <returns></returns>
+    public List<T> TraverseBreadth()
+    {
+      Queue<TreeNode<T>> nodeQueue = new Queue<TreeNode<T>>();
+      List<T> nodeList = new List<T>();
+      nodeQueue.Enqueue(Root);
+      TreeNode<T> curNode = new TreeNode<T>();
 
-    
+      while (curNode != null)
+      {
+        curNode = nodeQueue.Dequeue();
+        if (curNode != null) nodeList.Add(curNode.Value);
+        if (curNode.Left != null) nodeQueue.Enqueue(curNode.Left);
+        if (curNode.Right != null) nodeQueue.Enqueue(curNode.Right);
+      }
+      return nodeList;
+}
+
+
   }
 }
 
