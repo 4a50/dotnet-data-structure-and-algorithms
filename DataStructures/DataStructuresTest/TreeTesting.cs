@@ -12,13 +12,13 @@ namespace DataStructuresTest
     public void PreOrder_Traversal_Of_Binary_Tree_Success()
     {
       BinaryTree<int> bt = new BinaryTree<int>(756);
-      bt.Root.Left = new Node<int>(752);
-      bt.Root.Left.Left = new Node<int>(2);
-      bt.Root.Left.Right = new Node<int>(743);
+      bt.Root.Left = new TreeNode<int>(752);
+      bt.Root.Left.Left = new TreeNode<int>(2);
+      bt.Root.Left.Right = new TreeNode<int>(743);
 
-      bt.Root.Right = new Node<int>(705);
-      bt.Root.Right.Left = new Node<int>(81);
-      bt.Root.Right.Right = new Node<int>(22);
+      bt.Root.Right = new TreeNode<int>(705);
+      bt.Root.Right.Left = new TreeNode<int>(81);
+      bt.Root.Right.Right = new TreeNode<int>(22);
 
       int[] testArray = new int[] { 756, 752, 2, 743, 705, 81, 22 };
       Assert.Equal(testArray, bt.PreOrder(bt.Root, new List<int>()));
@@ -31,13 +31,13 @@ namespace DataStructuresTest
     public void InOrder_Traversal_Of_Binary_Tree_Success()
     {
       BinaryTree<int> bt = new BinaryTree<int>(756);
-      bt.Root.Left = new Node<int>(752);
-      bt.Root.Left.Left = new Node<int>(2);
-      bt.Root.Left.Right = new Node<int>(743);
+      bt.Root.Left = new TreeNode<int>(752);
+      bt.Root.Left.Left = new TreeNode<int>(2);
+      bt.Root.Left.Right = new TreeNode<int>(743);
 
-      bt.Root.Right = new Node<int>(705);
-      bt.Root.Right.Left = new Node<int>(81);
-      bt.Root.Right.Right = new Node<int>(22);
+      bt.Root.Right = new TreeNode<int>(705);
+      bt.Root.Right.Left = new TreeNode<int>(81);
+      bt.Root.Right.Right = new TreeNode<int>(22);
 
       int[] testArray = new int[] { 2, 752, 743, 756, 81, 705, 22 };
       Assert.Equal(testArray, bt.InOrder(bt.Root, new List<int>()));
@@ -50,13 +50,13 @@ namespace DataStructuresTest
     public void PostOrder_Traversal_Of_Binary_Tree_Success()
     {
       BinaryTree<int> bt = new BinaryTree<int>(756);
-      bt.Root.Left = new Node<int>(752);
-      bt.Root.Left.Left = new Node<int>(2);
-      bt.Root.Left.Right = new Node<int>(743);
+      bt.Root.Left = new TreeNode<int>(752);
+      bt.Root.Left.Left = new TreeNode<int>(2);
+      bt.Root.Left.Right = new TreeNode<int>(743);
 
-      bt.Root.Right = new Node<int>(705);
-      bt.Root.Right.Left = new Node<int>(81);
-      bt.Root.Right.Right = new Node<int>(22);
+      bt.Root.Right = new TreeNode<int>(705);
+      bt.Root.Right.Left = new TreeNode<int>(81);
+      bt.Root.Right.Right = new TreeNode<int>(22);
 
       int[] testArray = new int[] { 2, 743, 752, 81, 22, 705, 756 };
       Assert.Equal(testArray, bt.PostOrder(bt.Root, new List<int>()));
@@ -152,7 +152,25 @@ namespace DataStructuresTest
       bst.Add(40);
       Assert.False(bst.Contains(200));
     }
+    [Fact] 
+    public static void Locates_Max_Value_In_A_Binary_Tree()
+    {
+      BinaryTree<int> bt = new BinaryTree<int>(756);
+      bt.Root.Left = new TreeNode<int>(752);
+      bt.Root.Left.Left = new TreeNode<int>(2);
+      bt.Root.Left.Right = new TreeNode<int>(743);
+      bt.Root.Right = new TreeNode<int>(705);
+      bt.Root.Right.Left = new TreeNode<int>(81);
+      bt.Root.Right.Right = new TreeNode<int>(22);
 
-
+      Assert.Equal(756, bt.FindMax(0, bt.Root));
+    }
+    [Fact]
+    public static void Locates_Max_Value_Of_Single_Node()
+    {
+      BinaryTree<int> bt = new BinaryTree<int>(143);
+     
+      Assert.Equal(143, bt.FindMax(0, bt.Root));
+    }
   }
 }
