@@ -1,4 +1,6 @@
-﻿namespace DataStructures
+﻿using System;
+
+namespace DataStructures
 {
   public class Queue<T>
   {
@@ -20,10 +22,11 @@
       Front = tempNode;
       return tempNode;
     }
-    public bool Peek()
+    public Node<T> Peek()
     {
-      if (Front == null) return false;
-      return true;
+      if (Front == null) throw new NullReferenceException();
+      return Front;
+
     }
 
     public bool IsEmpty()
