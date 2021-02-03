@@ -85,13 +85,12 @@ namespace Trees
       nodeQueue.Enqueue(Root);
       Node<T> curNode = new Node<T>();
 
-      while (curNode != null)
+      while (!nodeQueue.IsEmpty())
       {
+        //TODO: Catch the null before you try to assign it to curNode
         
-        if (nodeQueue.Front != null)
-        {
-          curNode = nodeQueue.Dequeue().Value;
-        }
+                  curNode = nodeQueue.Dequeue().Value;
+        
 
         if (curNode != null) nodeList.Add(curNode.Value);
         if (curNode.Left != null) nodeQueue.Enqueue(curNode.Left);

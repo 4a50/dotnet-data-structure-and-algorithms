@@ -91,7 +91,40 @@ O(n) | O(1)
 
 ![FindMaxValue Method](./assets/MaxValue.png)
 
+## Breadth Strategy
+
+---
+
+### Problem Domain
+
+Write a method that will traverse a binary tree using the breadth strategy.
+Return a list of numbers in the order they were traversed.
+
+---
+
+### Inputs and Expected Outputs
+ Binary Tree Traversals
+
+| Input | Expected Output |
+| :----------------------- | :----------- |
+| Tree | [Integers left to right, top to bottom]|
+
+---
+
+### Big O
+
+
+| Time | Space |
+| :----------- | :----------- |
+O(n) | O(1)
+
+---
+### MaxValue WhiteBoard
+
+![FindMaxValue Method](./assets/BreadthWB.png)
+
 
 ### Change Log
 1.0: Initial Submission - 29 January 2121
 2.0: Addition of MaxValue method - 1 February 2021
+3.1: Addition of Breadth method.  Null still received - 2 February 2021
