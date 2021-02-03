@@ -20,9 +20,10 @@
       Front = tempNode;
       return tempNode;
     }
-    public T Peek()
+    public bool Peek()
     {
-      return Front.Value;
+      if (Front == null) return false;
+      return true;
     }
 
     public bool IsEmpty()

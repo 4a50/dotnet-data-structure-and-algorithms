@@ -83,18 +83,20 @@ namespace Trees
 
       List<T> nodeList = new List<T>();
       nodeQueue.Enqueue(Root);
-      Node<T> curNode = new Node<T>();
-
-      while (!nodeQueue.IsEmpty())
+      Node<T> curNode = null;
+      
+      while ( nodeQueue.Peek())
       {
-        //TODO: Catch the null before you try to assign it to curNode
+        //else { return nodeList; }
+        if (curNode != null)
+        {
+          nodeList.Add(curNode.Value);
+          if (curNode.Left != null) nodeQueue.Enqueue(curNode.Left);
+          if (curNode.Right != null) nodeQueue.Enqueue(curNode.Right);
+        }
         
-                  curNode = nodeQueue.Dequeue().Value;
-        
-
-        if (curNode != null) nodeList.Add(curNode.Value);
-        if (curNode.Left != null) nodeQueue.Enqueue(curNode.Left);
-        if (curNode.Right != null) nodeQueue.Enqueue(curNode.Right);
+        Node<Node<T>> node = nodeQueue.Dequeue();
+        if(node != null) curNode = node.Value;
       }
       return nodeList;
 }

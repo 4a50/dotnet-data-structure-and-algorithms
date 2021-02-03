@@ -55,7 +55,7 @@ namespace DataStructuresTest
       queue.Enqueue(10);
       queue.Enqueue(564);
       queue.Enqueue(15);
-      Assert.Equal(10, queue.Peek());
+      Assert.True(queue.Peek());
     }
     /// <summary>
     /// Able to empty the queue and isEmpty return a True value and Front should be null
@@ -84,7 +84,7 @@ namespace DataStructuresTest
       Assert.Null(queue.Front);
     }
     [Fact]
-    public void Peek_On_An_Empty_Queue_Raises_Null_Excpetion()
+    public void Peek_On_An_Empty_Queue_Raises_Null_Exception()
     {
       Queue<int> queue = new Queue<int>();
       Assert.Throws<NullReferenceException>(() => queue.Peek());
