@@ -1,4 +1,6 @@
-﻿namespace Trees
+﻿using DataStructures;
+
+namespace Trees
 {
   public class BinarySearchTree
   {
