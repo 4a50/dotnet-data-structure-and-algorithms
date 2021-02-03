@@ -55,7 +55,7 @@ namespace DataStructuresTest
       queue.Enqueue(10);
       queue.Enqueue(564);
       queue.Enqueue(15);
-      Assert.True(queue.Peek());
+      Assert.False(queue.IsEmpty());
     }
     /// <summary>
     /// Able to empty the queue and isEmpty return a True value and Front should be null

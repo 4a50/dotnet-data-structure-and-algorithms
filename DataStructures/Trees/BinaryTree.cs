@@ -85,7 +85,7 @@ namespace Trees
       nodeQueue.Enqueue(Root);
       Node<T> curNode = null;
       
-      while ( nodeQueue.Peek())
+      while ( !nodeQueue.IsEmpty())
       {
         //else { return nodeList; }
         if (curNode != null)
