@@ -12,7 +12,7 @@ Create a BinaryTree class
 
 + Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
 
-Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+Any exceptions or errors that come from your code should be semantic, that capture errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 
 Create a BinarySearchTree class
 
@@ -116,15 +116,23 @@ Return a list of numbers in the order they were traversed.
 
 | Time | Space |
 | :----------- | :----------- |
-O(n) | O(1)
+O(n) | O(h)
 
 ---
-### MaxValue WhiteBoard
+### Breadth WhiteBoard
 
 ![FindMaxValue Method](./assets/BreadthWB.png)
 
 
 ### Change Log
 1.0: Initial Submission - 29 January 2121
+
 2.0: Addition of MaxValue method - 1 February 2021
-3.1: Addition of Breadth method.  Null still received - 2 February 2021
+
+2.1: Addition of Breadth method.  Null still received - 2 February 2021
+
+3.0: Resolved TraversalBreadthIssue.
+
+Updated README BigO Notation
+
+All Tests Passing. - 3 February.
