@@ -1,5 +1,5 @@
 using DataStructures;
-using FifoAnimalShelter;
+using FIFOAnimalShelter;
 using Xunit;
 
 namespace CodeChallengeTests
