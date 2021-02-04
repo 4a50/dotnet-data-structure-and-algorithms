@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueWithStacks", "CodeChallenges\QueueWithStacks\QueueWithStacks.csproj", "{CDA4EC1A-EC7B-49AD-8812-DCED18559258}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FifoAnimalShelter", "CodeChallenges\FifoAnimalShelter\FifoAnimalShelter.csproj", "{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIFOAnimalShelter", "CodeChallenges\FifoAnimalShelter\FIFOAnimalShelter.csproj", "{14A5AFAE-2CAC-42E5-951C-4896B7FFA0A6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trees", "DataStructures\Trees\Trees.csproj", "{58EC0E0F-3BF7-44F1-B306-489EDD77E8EC}"
 EndProject
