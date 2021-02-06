@@ -1,5 +1,5 @@
 using DataStructures;
-using FifoAnimalShelter;
+using FIFOAnimalShelter;
 using Xunit;
 
 namespace CodeChallengeTests
@@ -100,7 +100,7 @@ namespace CodeChallengeTests
       testShelter.Enqueue(new Animal("Cat"));
       testShelter.Enqueue(new Animal("Cat"));
       testShelter.Enqueue(new Animal("Dog"));
-      testShelter.Dequeue("Cat");      
+      testShelter.Dequeue("Cat");
       Assert.Equal("Dog", testShelter.Dequeue("Dog").Species);
     }
 
@@ -109,7 +109,7 @@ namespace CodeChallengeTests
     /// Test the animal shelter to return a NULL if pref is not a dog or cat.
     /// </summary>
     [Fact]
-     public void Animal_Shelter_Return_Null_With_Invalid_Input()
+    public void Animal_Shelter_Return_Null_With_Invalid_Input()
     {
       AnimalShelter testShelter = new AnimalShelter();
       testShelter.Enqueue(new Animal("Cat"));
