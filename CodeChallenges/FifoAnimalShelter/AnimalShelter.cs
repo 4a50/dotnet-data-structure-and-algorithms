@@ -1,6 +1,6 @@
 ﻿using DataStructures;
 
-namespace FifoAnimalShelter
+namespace FIFOAnimalShelter
 {
 
   public class AnimalShelter
