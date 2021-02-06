@@ -1,4 +1,4 @@
-﻿namespace FifoAnimalShelter
+﻿namespace FIFOAnimalShelter
 {
   public class Animal
   {
