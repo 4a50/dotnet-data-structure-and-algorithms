@@ -14,5 +14,8 @@
 
 [Multi-Bracket-Validation](./CodeChallenges/Multi-Bracket-Validation/README.md)
 
+[FizzBuzz K-Ary Tree](./CodeChallenges/FizzBuzzTree/README.md)
+
+
 
 

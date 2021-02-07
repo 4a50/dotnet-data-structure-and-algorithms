@@ -36,7 +36,7 @@ Original Queue: [Cat, Dog, Cat]
 
 ### Whiteboard Visual
 Original WhiteBoard
-![Code Challenge 12 Whiteboard](./assets/FifoAnimalShelter.png)
+![Code Challenge 12 Whiteboard](./assets/Code-Challenge-12.png)
 
 
 ---
