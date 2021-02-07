@@ -24,7 +24,7 @@ namespace TestBench
       intTree.Root.Leaves[2].Leaves.Add(new KAryNode<int>(60));
 
       intTree.KAryTreeIteration(intTree.Root, intTree.ValueList);
-      Console.WriteLine($"intTree Value Count: {intTree.ValueList.Count}");
+      Console.WriteLine($"intTree Value {intTree.ValueList.Count}");
       foreach (int i in intTree.ValueList)
       {
         Console.Write($" {i} =>");

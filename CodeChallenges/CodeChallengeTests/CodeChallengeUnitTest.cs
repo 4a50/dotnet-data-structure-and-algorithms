@@ -139,43 +139,72 @@ namespace CodeChallengeTests
       string testString = "{(})";
       Assert.False(MultBracketValidation.MultiBracketValidation(testString));
     }
-    //[Fact]
-    //public void Test_FizzBuzz_Tree()
-    //{
-      //KAryTree<string> fizzTree = new KAryTree<string>();
-      //KAryTree<int> ktree = new KAryTree<int>(15);
-      //List<int> seedNodes = new List<int> { 30, 90, 5 };
-      //int count = 0;
-      //foreach (int i in seedNodes) { ktree.Root.Leaves.Add(new KAryNode<int>(i)); }
-      //foreach (KAryNode<int> ki in ktree.Root.Leaves)
-      //{
-      //  if (count++ == 0) { ki.Leaves.Add(new KAryNode<int>(10)); }
+    /// <summary>
+    /// Tests the List Creator method for a K-Ary tree
+    /// </summary>
+    [Fact]
+    public void Test_Tree_List_Creator()
+    {
+      KAryTree<int> intTree = new KAryTree<int>(15);
 
-      //  if (count++ == 1)
-      //  {
-      //    ki.Leaves.Add(new KAryNode<int>(90));
-      //    ki.Leaves.Find(p => p.Value == 90).Leaves.Add(new KAryNode<int>(33));
-      //  }
+      intTree.Root.Leaves.Add(new KAryNode<int>(30));
+      intTree.Root.Leaves.Add(new KAryNode<int>(90));
+      intTree.Root.Leaves.Add(new KAryNode<int>(5));
 
-      //  if (count++ == 2)
-      //  {
-      //    ki.Leaves.Add(new KAryNode<int>(5));
-      //    ki.Leaves.Find(p => p.Value == 5).Leaves.Add(new KAryNode<int>(7));
-      //    ki.Leaves.Find(p => p.Value == 5).Leaves.Add(new KAryNode<int>(60));
-      //  }
-      //}
-      //ktree.FizzBuzzTree(ktree.Root, strTree.R);
-      ////Test      
-      //string[] expectedString = new string[] { "FizzBuzz", "FizzBuzz", "Buzz" };
-      //fizzTree.KAryTreeIteration(fizzTree.Root);
-      //string[] evalString = fizzTree.ValueList.ToArray();
-      ////count = 0;
-      ////foreach(KAryNode<string> l in fizzTree.Root.Leaves)
-      ////{
-      ////  evalString[count++] = l.Value;
-      ////}      
-      //Assert.Equal(expectedString, evalString);
-      //}
+      intTree.Root.Leaves[0].Leaves.Add(new KAryNode<int>(10));
+
+      intTree.Root.Leaves[1].Leaves.Add(new KAryNode<int>(33));
+
+      intTree.Root.Leaves[2].Leaves.Add(new KAryNode<int>(7));
+      intTree.Root.Leaves[2].Leaves.Add(new KAryNode<int>(60));
+
+      List<int> testList = intTree.KAryTreeIteration(intTree.Root, intTree.ValueList);
+      int[] expectedInts = new int[] { 15, 30, 10, 90, 33, 5, 7, 60 };
+
+      Assert.Equal(expectedInts, testList.ToArray());
+
+      }
+    
+    
+    /// <summary>
+    /// Test to see if the FizzBuzz Tree method will create a new tree with FizzBuzz
+    /// divisible by 3 = "Fizz"
+    /// divisible by 5 = "Buzz"
+    /// divisible by 3 and 5 = "FizzBuzz
+    /// Any other number = string equivalent (4 = "4")
+    /// </summary>
+    
+    [Fact]
+    public void Test_FizzBuzz_Tree()
+    {
+      //Setup of the integer Tree
+
+      KAryTree<int> intTree = new KAryTree<int>(15);
+
+      intTree.Root.Leaves.Add(new KAryNode<int>(30));
+      intTree.Root.Leaves.Add(new KAryNode<int>(90));
+      intTree.Root.Leaves.Add(new KAryNode<int>(5));
+
+      intTree.Root.Leaves[0].Leaves.Add(new KAryNode<int>(10));
+
+      intTree.Root.Leaves[1].Leaves.Add(new KAryNode<int>(33));
+
+      intTree.Root.Leaves[2].Leaves.Add(new KAryNode<int>(7));
+      intTree.Root.Leaves[2].Leaves.Add(new KAryNode<int>(60));
+
+      //expected array of strings
+      string[] expected = { "FizzBuzz","FizzBuzz","Buzz","FizzBuzz","Fizz", "Buzz", "7", "FizzBuzz" };
+            
+      //Running Method
+      //intTree.KAryTreeIteration(intTree.Root, intTree.ValueList);
+      
+      KAryTree<string> fizzResult = FizzTreeMaker.FizzBuzzTree(intTree);
+      fizzResult.KAryTreeIteration(fizzResult.Root, fizzResult.ValueList);
+
+      Assert.Equal(expected, fizzResult.ValueList.ToArray());
+
+
     }
+  }
   }
 
