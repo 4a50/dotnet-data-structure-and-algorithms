@@ -17,6 +17,12 @@ namespace FizzBuzzTree
     {
       Root = new KAryNode<T>(value);      
      }
+    /// <summary>
+    /// Will iterate through the tree and update the ValueList property will all the values in an pre-order manner.
+    /// </summary>
+    /// <param name="node"></param>
+    /// <param name="valList"></param>
+    /// <returns></returns>
     public List<T> KAryTreeIteration(KAryNode<T> node, List<T> valList)
     {
       valList.Add(node.Value);
