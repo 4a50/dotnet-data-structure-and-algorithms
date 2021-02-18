@@ -34,6 +34,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBench", "CodeChallenges\TestBench\TestBench.csproj", "{6997185C-23AA-4FD0-8F60-E8939C1B4F1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickSort", "QuickSort\QuickSort.csproj", "{8A34EE34-CA6B-426B-A978-50A5548352E7}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
