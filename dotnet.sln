@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeChallenges", "CodeChall
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A824A45F-55E1-4906-ACDD-2C70BB05E636}"
 	ProjectSection(SolutionItems) = preProject
+		Blog.md = Blog.md
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -28,11 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multi-Bracket-Validation", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FIFOAnimalShelter", "CodeChallenges\FIFOAnimalShelter\FIFOAnimalShelter.csproj", "{1CEE5D2D-6464-44DB-AC6E-A4F72C7BF322}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzTree", "CodeChallenges\FizzBuzzTree\FizzBuzzTree.csproj", "{E97344E6-06D6-4F72-8DE2-2ED4A4623F02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FizzBuzzTree", "CodeChallenges\FizzBuzzTree\FizzBuzzTree.csproj", "{E97344E6-06D6-4F72-8DE2-2ED4A4623F02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBench", "CodeChallenges\TestBench\TestBench.csproj", "{6997185C-23AA-4FD0-8F60-E8939C1B4F1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBench", "CodeChallenges\TestBench\TestBench.csproj", "{6997185C-23AA-4FD0-8F60-E8939C1B4F1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSort", "QuickSort\QuickSort.csproj", "{8A34EE34-CA6B-426B-A978-50A5548352E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickSort", "QuickSort\QuickSort.csproj", "{8A34EE34-CA6B-426B-A978-50A5548352E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
