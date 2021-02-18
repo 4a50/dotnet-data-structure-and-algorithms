@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\QuickSort\QuickSort.csproj" />
     <ProjectReference Include="..\FizzBuzzTree\FizzBuzzTree.csproj" />
   </ItemGroup>
 
