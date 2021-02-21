@@ -14,7 +14,12 @@ namespace DataStructures
       Map = new LinkedList <KeyValuePair<string, string>>[size];
     }
 
-    //Create a way to Hash the input. (multiply by a large prime
+     
+    /// <summary>
+    /// Generates a Hash Value with the supplied Key.
+    /// </summary>
+    /// <param name="key"></param>
+    /// <returns></returns>
     private int Hash (string key)
     {      
       int hashValue = 0;
@@ -31,7 +36,11 @@ namespace DataStructures
       return hashValue;
     }
     
-    //How to store the data in a has table. (assign it a bucket, and put it there.
+    /// <summary>
+    /// Add a Key Value Pair to the Hash Table
+    /// </summary>
+    /// <param name="key"></param>
+    /// <param name="value"></param>
     public void Add(string key, string value)
     {
       //Hash the Key
@@ -45,11 +54,13 @@ namespace DataStructures
       KeyValuePair<string, string> valueEntry = new KeyValuePair<string, string>(key, value);
 
       //Inserts the KVP (node) into the LinkedList in the appropriate bucket.
-
       Map[hashKey].Insert(valueEntry);
-
-    }
-    
+    }    
+    /// <summary>
+    /// Retrieves the Value of the supplied Key.  Will return a NULL if Key is not found
+    /// </summary>
+    /// <param name="key"></param>
+    /// <returns></returns>
     public string Get (string key)
     {
       int hashBucket = Hash(key);
@@ -65,7 +76,12 @@ namespace DataStructures
       }
       return null;
     }
-
+    /// <summary>
+    /// Searches Hash Table for the suppled key. 
+    /// Returns a Boolean with result.
+    /// </summary>
+    /// <param name="key"></param>
+    /// <returns></returns>
     public bool Contains (string key)
     {
       int keyHash = Hash(key);
@@ -79,10 +95,9 @@ namespace DataStructures
       }
       return false;
     }
-
-    
-
-    //Print Method for a visual of what is going on
+    /// <summary>
+    /// Prints out the current Hash Table.
+    /// </summary>
     public void Print()
     {
       for (int i = 0; i < Map.Length; i++)
