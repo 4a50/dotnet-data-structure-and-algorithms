@@ -6,13 +6,13 @@ namespace DataStructures
   {
     static void Main(string[] args)
     {
-      LinkedList aList = new LinkedList();
+      LinkedList<int> aList = new LinkedList<int>();
       aList.Insert(10);
       aList.Insert(8);
       aList.Insert(6);
       aList.Insert(4);
       aList.Insert(2);
-      LinkedList bList = new LinkedList();
+      LinkedList<int> bList = new LinkedList<int>();
       bList.Insert(9);
       bList.Insert(7);
       bList.Insert(5);
@@ -26,7 +26,7 @@ namespace DataStructures
       Console.WriteLine(ZipLists(aList, bList).Value);
       aList.Print();
     }
-    public static Node<int> ZipLists(LinkedList aList, LinkedList bList)
+    public static Node<int> ZipLists(LinkedList<int> aList, LinkedList<int> bList)
     {
       Node<int> a = aList.Head;
       Node<int> b = bList.Head;
