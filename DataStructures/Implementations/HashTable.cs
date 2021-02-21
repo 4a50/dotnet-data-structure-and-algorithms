@@ -5,10 +5,10 @@ using DataStructures;
 
 namespace DataStructures
 {
-  class HashTable
+  public class HashTable
   {
    
-    private DataStructures.LinkedList<KeyValuePair<string, string>>[] Map { get; set; }
+    public LinkedList<KeyValuePair<string, string>>[] Map { get; set; }
     public HashTable(int size)
     {
       Map = new LinkedList <KeyValuePair<string, string>>[size];
@@ -32,7 +32,7 @@ namespace DataStructures
     }
     
     //How to store the data in a has table. (assign it a bucket, and put it there.
-    public void Set(string key, string value)
+    public void Add(string key, string value)
     {
       //Hash the Key
       int hashKey = Hash(key);
@@ -49,8 +49,46 @@ namespace DataStructures
       Map[hashKey].Insert(valueEntry);
 
     }
+    
+    public string Get (string key)
+    {
+      int hashBucket = Hash(key);
+      if (hashBucket< 0 || hashBucket > Map.Length - 1) { return  "Value is Not in Hash Table"; }
+
+      LinkedList<KeyValuePair<string, string>> bucket = Map[hashBucket];
+
+      Node<KeyValuePair<string, string>> currentNode = bucket.Head;
+      while (currentNode != null)
+      {
+        if(currentNode.Value.Key == key) { return currentNode.Value.Value; }
+      }
+      return "NotFound";
+    }
+
     //Make an array for buckets to store the data == predertermined size
 
-    //
+    //Print Method for a visual of what is going on
+    public void Print()
+    {
+      for (int i = 0; i < Map.Length; i++)
+      {
+        if (Map[i] == null)
+        {
+          Console.WriteLine($"Bucket {i}: Null");
+        }
+        else
+        {
+          Console.Write($"Bucket {i}: ");
+
+          Node<KeyValuePair<string, string>> current = Map[i].Head;
+          while (current != null)
+          {
+            Console.Write($"[{current.Value.Key} : {current.Value.Value}] => ");
+            current = current.Next;
+          }
+          Console.WriteLine();
+        }
+      }
+    }
   }
 }

@@ -189,5 +189,6 @@ namespace DataStructures
       a.Next = b;
       return a.Next;
     }
+
   }
 }
