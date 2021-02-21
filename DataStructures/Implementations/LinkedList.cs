@@ -2,33 +2,33 @@
 
 namespace DataStructures
 {
-  public class LinkedList
+  public class LinkedList<T>
   {
 
-    public Node<int> Head { get; set; }
+    public Node<T> Head { get; set; }
     ///<summary>
     ///Empty Linked List
     ///Usage: LinkedList my List = new LinkedList();
     /// </summary>
     public LinkedList() { }
-
     ///<summary>
     ///Creates a linked list with a node, assigning a Head
     ///Usage: LinkedList myList = new LinkedList(4);
     /// </summary>
     /// <param name="value"></param>
-    public LinkedList(int value)
+    public LinkedList(T value)
     {
-      Node<int> node = new Node<int>(value);
+      Node<T> node = new Node<T>(value);
       Head = node;
     }
+    
     //Methods
 
     //1st Method - While
     public string Print()
     {
       string output = "";
-      Node<int> current = Head;
+      Node<T> current = Head;
       while (current != null)
       {
         Console.Write($"[{current.Value}] => ");
@@ -56,30 +56,32 @@ namespace DataStructures
       return output;
     }
 
-    public void Insert(int value)
+    public void Insert(T value)
     {
-      Node<int> node = new Node<int>(value);
+      Node<T> node = new Node<T>(value);
       node.Next = Head;
       Head = node;
     }
-    public bool Includes(int value)
+    public bool Includes(T value)
     {
-      Node<int> currentNode = Head;
+      Node<T> currentNode = Head;
       while (currentNode.Next != null)
       {
-        if (currentNode.Value == value) { return true; }
+        Console.WriteLine($"Includes Object Comparison: {Object.Equals(currentNode.Value, value)}");
+        //if (currentNode.Value.CompareTo == value) { return true; }
+        if (Object.Equals(currentNode.Value, value)) return true;
         currentNode = currentNode.Next;
       }
       return false;
     }
-    public int Append(int value)
+    public T Append(T value)
     {
-      Node<int> currentNode = Head;
+      Node<T> currentNode = Head;
       while (currentNode != null)
       {
         if (currentNode.Next == null)
         {
-          Node<int> newNode = new Node<int>(value);
+          Node<T> newNode = new Node<T>(value);
           currentNode.Next = newNode;
           return newNode.Value;
         }
@@ -89,32 +91,34 @@ namespace DataStructures
 
     }
 
-    public int InsertAfter(int value, int newValue)
+    public T InsertAfter(T value, T newValue)
     {
-      Node<int> currentNode = Head;
+      Node<T> currentNode = Head;
       while (currentNode.Next != null)
       {
-        if (currentNode.Value == value)
+        //if (currentNode.Value == value)
+        if (Object.Equals(currentNode.Value, value))
         {
-          Node<int> newNode = new Node<int>(newValue);
+          Node<T> newNode = new Node<T>(newValue);
           newNode.Next = currentNode.Next;
           currentNode.Next = newNode;
           return newNode.Next.Value;
         }
         currentNode = currentNode.Next;
       }
-      return -1;
+      return default(T); //returns a null for the datatype that is used.
     }
-    public int InsertBefore(int value, int newValue)
+    public T InsertBefore(T value, T newValue)
     {
-      Node<int> oldNode = null;
-      Node<int> currentNode = Head;
+      Node<T> oldNode = null;
+      Node<T> currentNode = Head;
       while (currentNode.Next != null)
       {
-        if (currentNode.Value == value)
+        if (Object.Equals(currentNode.Value, value))
+        //if (currentNode.Value == value)
         {
           Console.WriteLine($"Found {currentNode.Value}");
-          Node<int> newNode = new Node<int>(newValue);
+          Node<T> newNode = new Node<T>(newValue);
           oldNode.Next = newNode;
           newNode.Next = currentNode;
           return newNode.Next.Value;
@@ -122,24 +126,24 @@ namespace DataStructures
         oldNode = currentNode;
         currentNode = currentNode.Next;
       }
-      return -1;
+      return default(T);
     }
     /// <summary>
     /// Will locate the value of the 
     /// </summary>
     /// <param name="k"></param>
     /// <returns></returns>
-    public int LocateKthNodeFromTail(int k)
+    public T LocateKthNodeFromTail(int k)
     {
-      Node<int> currentNode = Head;
+      Node<T> currentNode = Head;
       // Set the lengthList to one, to take into account the initial setting
       // of the Head as the currentNode
       int lengthList = 1;
       int counter = 0;
       int placeOfNode;
-      int selectedNodeValue = 0;
+      T selectedNodeValue;
       //If user enters a value that is less than 0
-      if (k < 0) { return -1; }
+      if (k < 0) { throw new Exception("K is less than 0"); }
       //While loop gets the length of the list and stores into lengthList
       while (currentNode.Next != null)
       {
@@ -148,7 +152,7 @@ namespace DataStructures
       }
       placeOfNode = lengthList - k;
       // if the position of the desire node is outside the length of the list.
-      if (placeOfNode < 0) { return -2; }
+      if (placeOfNode < 0) { throw new Exception("K is outside the length of the list"); }
       // if the place of Node at the zero position, return the HeadValue.
       currentNode = Head;
       if (placeOfNode == 0) { return currentNode.Value; }
@@ -163,6 +167,27 @@ namespace DataStructures
       } while (currentNode != null);
       return selectedNodeValue;
 
+    }
+    public static Node<T> ZipLists(LinkedList<T> aList, LinkedList<T> bList)
+    {
+      Node<T> a = aList.Head;
+      Node<T> b = bList.Head;
+      Node<T> c = b.Next;
+
+      while (b.Next != null)
+      {
+        //Connect Node A to B, B next to a.Next to start the zip process
+        b.Next = a.Next;
+        a.Next = b;
+        //Move our pointers one increment.
+        a = b.Next;
+        b = c;
+        c = c.Next;
+
+      }
+      //The loop will exit before the last node is connected.  This must be in to complete the list.
+      a.Next = b;
+      return a.Next;
     }
   }
 }
