@@ -67,18 +67,26 @@ Big O:
 + IsEmpty() - returns a boolean if the queue is empty or not.
 
 
-## Linked List
+## HashTables
 
-### Challenge
+### Challenge 
 
-### Approach and Efficiency
-
-### API
-
-## Nodes
-
-### Challenge
+Create a **HashTable** data structure with the following methods:
++ Add
++ Contains
++ Get
++ Hash
 
 ### Approach and Efficiency
 
-### API
+Big O:
++ Space O(1)
++ Time O(1)
++ 
+
+## API
+
++ Add - Adds a Value to the HashTable
++ Contains - Searches to Determing is a Key Exists
++ Get - Retrieves a Value from a given Key
++ Hash - Generates a Hash for a supplies Value
