@@ -61,11 +61,26 @@ namespace DataStructures
       while (currentNode != null)
       {
         if(currentNode.Value.Key == key) { return currentNode.Value.Value; }
+        currentNode = currentNode.Next;
       }
-      return "NotFound";
+      return null;
     }
 
-    //Make an array for buckets to store the data == predertermined size
+    public bool Contains (string key)
+    {
+      int keyHash = Hash(key);
+      if (keyHash < 0 || keyHash > Map.Length - 1 || Map[keyHash] == null) { return false; }
+      LinkedList<KeyValuePair<string, string>> bucket = Map[keyHash];
+
+      Node<KeyValuePair<string, string>> currentNode = bucket.Head;
+      while (currentNode != null)
+      {
+        if (currentNode.Value.Key == key) { return true; }
+      }
+      return false;
+    }
+
+    
 
     //Print Method for a visual of what is going on
     public void Print()
