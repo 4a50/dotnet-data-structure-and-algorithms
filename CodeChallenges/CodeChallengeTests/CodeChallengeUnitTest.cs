@@ -202,9 +202,17 @@ namespace CodeChallengeTests
       fizzResult.KAryTreeIteration(fizzResult.Root, fizzResult.ValueList);
 
       Assert.Equal(expected, fizzResult.ValueList.ToArray());
-
+    }
+    [Fact]
+    public void Find_Repeated_Word_In_String()
+    {
+      RepeatedWord repeatWord = new RepeatedWord(10);
+      string testString = "Once upon a time, there was a brave princess who...";
+      string result = repeatWord.FindRepeatedWord(testString);
+      Assert.Equal("a", result);
 
     }
+      
   }
   }
 

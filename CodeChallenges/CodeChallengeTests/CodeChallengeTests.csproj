@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\DataStructures\Implementations\Implementations.csproj" />
+    <ProjectReference Include="..\..\RepeatedWord\RepeatedWord.csproj" />
     <ProjectReference Include="..\FIFOAnimalShelter\FIFOAnimalShelter.csproj" />
     <ProjectReference Include="..\FizzBuzzTree\FizzBuzzTree.csproj" />
     <ProjectReference Include="..\LinkedLists\LinkedLists.csproj" />
