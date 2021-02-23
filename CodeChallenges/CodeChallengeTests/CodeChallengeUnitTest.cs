@@ -202,9 +202,44 @@ namespace CodeChallengeTests
       fizzResult.KAryTreeIteration(fizzResult.Root, fizzResult.ValueList);
 
       Assert.Equal(expected, fizzResult.ValueList.ToArray());
+    }
+    [Fact]
+    public void List_Of_Common_Values_In_Two_Trees() 
+    {
+      Trees.BinaryTree<int> btOne = new Trees.BinaryTree<int>(150);
+      btOne.Root.Left = new Node<int>(100);
+      btOne.Root.Left.Left = new Node<int>(75);
+      btOne.Root.Left.Right = new Node<int>(160);
+
+      btOne.Root.Left.Right.Left = new Node<int>(125);
+      btOne.Root.Left.Right.Right = new Node<int>(175);
+
+      btOne.Root.Right = new Node<int>(250);
+      btOne.Root.Right.Left = new Node<int>(200);
+      btOne.Root.Right.Right = new Node<int>(350);
+
+      btOne.Root.Right.Right.Left = new Node<int>(300);
+      btOne.Root.Right.Right.Right = new Node<int>(500);
+
+      Trees.BinaryTree<int> btTwo = new Trees.BinaryTree<int>(42);
+
+      btTwo.Root.Left = new Node<int>(100);
+      btTwo.Root.Left.Left = new Node<int>(15);
+      btTwo.Root.Left.Right = new Node<int>(100);
+
+      btTwo.Root.Left.Right.Left = new Node<int>(125);
+      btTwo.Root.Left.Right.Right = new Node<int>(175);
+
+      btTwo.Root.Right = new Node<int>(600);
+      btTwo.Root.Right.Left = new Node<int>(200);
+      btTwo.Root.Right.Right = new Node<int>(350);
+
+      btTwo.Root.Right.Right.Left = new Node<int>(4);
+      btTwo.Root.Right.Right.Right = new Node<int>(500);
+
 
 
     }
   }
-  }
+}
 

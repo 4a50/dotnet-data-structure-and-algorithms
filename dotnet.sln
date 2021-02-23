@@ -34,7 +34,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBench", "CodeChallenges\TestBench\TestBench.csproj", "{6997185C-23AA-4FD0-8F60-E8939C1B4F1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickSort", "QuickSort\QuickSort.csproj", "{8A34EE34-CA6B-426B-A978-50A5548352E7}"
-
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeIntersection", "CodeChallenges\TreeIntersection\TreeIntersection.csproj", "{662AA9A4-DF63-4B12-942B-9F44D6EEE792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +87,10 @@ Global
 		{8A34EE34-CA6B-426B-A978-50A5548352E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A34EE34-CA6B-426B-A978-50A5548352E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A34EE34-CA6B-426B-A978-50A5548352E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{662AA9A4-DF63-4B12-942B-9F44D6EEE792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{662AA9A4-DF63-4B12-942B-9F44D6EEE792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{662AA9A4-DF63-4B12-942B-9F44D6EEE792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{662AA9A4-DF63-4B12-942B-9F44D6EEE792}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +107,7 @@ Global
 		{E97344E6-06D6-4F72-8DE2-2ED4A4623F02} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{6997185C-23AA-4FD0-8F60-E8939C1B4F1A} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{8A34EE34-CA6B-426B-A978-50A5548352E7} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
+		{662AA9A4-DF63-4B12-942B-9F44D6EEE792} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D8CBDA3-1372-4033-8C11-81DBE1CC27E8}
