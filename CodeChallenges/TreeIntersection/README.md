@@ -31,7 +31,7 @@ Input |Expected Output   |
 
 ### Whiteboard Visual
 ***[Your Whiteboard Image]***
-![Code Challenge 11 Whiteboard](./assets/CodeChallenge31_wb.png)
+![Code Challenge 31 Whiteboard](./assets/CodeChallenge32.png)
 
 
 ---
