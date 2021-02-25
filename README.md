@@ -16,6 +16,7 @@
 
 [FizzBuzz K-Ary Tree](./CodeChallenges/FizzBuzzTree/README.md)
 
+[Left Join](./CodeChallenges/LeftJoin/README.md)
 
 
 
