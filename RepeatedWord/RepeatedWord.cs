@@ -20,7 +20,7 @@ namespace DataStructures
       for (int i = 0; i < parsedPhrase.Length; i++)
       {        
         hashWord = Map.Hash(parsedPhrase[i]);
-        if (Map.Contains(word))
+        if (Map.Contains(parsedPhrase[i]))
         {
           word = parsedPhrase[i];
           return word;
