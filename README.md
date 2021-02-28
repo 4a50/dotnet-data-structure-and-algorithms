@@ -16,6 +16,6 @@
 
 [FizzBuzz K-Ary Tree](./CodeChallenges/FizzBuzzTree/README.md)
 
-
+[Find Repeated Word Using Hash Table](./RepeatedWord/README.md)
 
 
