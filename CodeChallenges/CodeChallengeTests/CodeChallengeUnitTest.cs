@@ -227,6 +227,8 @@ namespace CodeChallengeTests
     {
       RepeatedWord repeatedWord = new RepeatedWord();
       string testString = "";
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
     }
     [Fact]
     public void List_Of_Common_Values_In_Two_Trees() 
@@ -263,8 +265,6 @@ namespace CodeChallengeTests
       btTwo.Root.Right.Right.Right = new Node<int>(500);
 
 
-      string testValue = repeatedWord.FindRepeatedWord(testString);
-      Assert.Equal("", testValue);
     }
     [Fact]
     public void Find_No_Repeated_Word_In_String_Of_Non_Word_Characters()

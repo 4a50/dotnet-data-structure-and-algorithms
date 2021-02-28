@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataStructures\Implementations\Implementations.csproj" />
+    <ProjectReference Include="..\..\DataStructures\Trees\Trees.csproj" />
+  </ItemGroup>
+
 </Project>
