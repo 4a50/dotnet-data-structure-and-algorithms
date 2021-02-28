@@ -40,4 +40,9 @@ Input |Expected Output   |
 
 1.0: *Initial submission* - 23 Feb 21
 
+2.0: *Completed Assignment* - 28 Feb 21
++ Code Completed
++ Tests Written from Method and helper method
++ Docs Updated
+
 ---
