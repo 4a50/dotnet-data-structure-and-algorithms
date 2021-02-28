@@ -202,9 +202,45 @@ namespace CodeChallengeTests
       fizzResult.KAryTreeIteration(fizzResult.Root, fizzResult.ValueList);
 
       Assert.Equal(expected, fizzResult.ValueList.ToArray());
-
+    }
+    [Fact]
+    public void Find_Repeated_Word_In_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "Once upon a time, there was a brave princess who...";
+      
+      string testValue = repeatedWord.FindRepeatedWord(testString);      
+      Assert.Equal("a", testValue);
 
     }
+    [Fact]
+    public void Find_No_Repeated_Word_In_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "To boldly go where, no one has gone before";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+    [Fact]
+    public void Find_No_Repeated_Word_In_Empty_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+    [Fact]
+    public void Find_No_Repeated_Word_In_String_Of_Non_Word_Characters()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "^%!#!@#$";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+
   }
   }
 

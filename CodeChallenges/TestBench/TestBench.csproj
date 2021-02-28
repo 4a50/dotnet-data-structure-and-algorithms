@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\QuickSort\QuickSort.csproj" />
+    <ProjectReference Include="..\..\RepeatedWord\RepeatedWord.csproj" />
     <ProjectReference Include="..\FizzBuzzTree\FizzBuzzTree.csproj" />
   </ItemGroup>
 

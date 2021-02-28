@@ -69,7 +69,7 @@ namespace DataStructuresTest
     public void Properly_Returns_All_Values_In_List()
     {
       LinkedList<int> testList = new LinkedList<int>(34);
-      string testStr = "[490] => [162] => [34] => Null";
+      string testStr = "<490> => <162> => <34> => Null";
       testList.Insert(162);
       testList.Insert(490);
       Assert.Equal(testStr, testList.Print());
