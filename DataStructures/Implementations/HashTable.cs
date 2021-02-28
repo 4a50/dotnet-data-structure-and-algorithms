@@ -9,6 +9,10 @@ namespace DataStructures
   {
    
     public LinkedList<KeyValuePair<string, string>>[] Map { get; set; }
+    public HashTable()
+    {
+      Map = new LinkedList<KeyValuePair<string, string>>[1024];
+    }
     public HashTable(int size)
     {
       Map = new LinkedList <KeyValuePair<string, string>>[size];
@@ -20,7 +24,7 @@ namespace DataStructures
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    private int Hash (string key)
+    public int Hash (string key)
     {      
       int hashValue = 0;
       //convert the string to a char[] (theses are ASCII Values <--ints
@@ -55,6 +59,7 @@ namespace DataStructures
 
       //Inserts the KVP (node) into the LinkedList in the appropriate bucket.
       Map[hashKey].Insert(valueEntry);
+      
     }    
     /// <summary>
     /// Retrieves the Value of the supplied Key.  Will return a NULL if Key is not found

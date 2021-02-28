@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DataStructures\Trees\Trees.csproj" />
     <ProjectReference Include="..\..\QuickSort\QuickSort.csproj" />
+    <ProjectReference Include="..\..\RepeatedWord\RepeatedWord.csproj" />
     <ProjectReference Include="..\FizzBuzzTree\FizzBuzzTree.csproj" />
+    <ProjectReference Include="..\TreeIntersection\TreeIntersection.csproj" />
   </ItemGroup>
 
 </Project>

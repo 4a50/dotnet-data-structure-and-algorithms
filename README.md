@@ -16,7 +16,10 @@
 
 [FizzBuzz K-Ary Tree](./CodeChallenges/FizzBuzzTree/README.md)
 
+[Tree Intersetion List](./CodeChallenges/TreeIntersection/README.md)
+
 [Left Join](./CodeChallenges/LeftJoin/README.md)
 
+[Find Repeated Word Using Hash Table](./RepeatedWord/README.md)
 
 
