@@ -206,13 +206,41 @@ namespace CodeChallengeTests
     [Fact]
     public void Find_Repeated_Word_In_String()
     {
-      RepeatedWord repeatWord = new RepeatedWord(10);
+      RepeatedWord repeatedWord = new RepeatedWord();
       string testString = "Once upon a time, there was a brave princess who...";
-      string result = repeatWord.FindRepeatedWord(testString);
-      Assert.Equal("a", result);
+      
+      string testValue = repeatedWord.FindRepeatedWord(testString);      
+      Assert.Equal("a", testValue);
 
     }
-      
+    [Fact]
+    public void Find_No_Repeated_Word_In_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "To boldly go where, no one has gone before";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+    [Fact]
+    public void Find_No_Repeated_Word_In_Empty_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+    [Fact]
+    public void Find_No_Repeated_Word_In_String_Of_Non_Word_Characters()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "^%!#!@#$";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+
   }
   }
 
