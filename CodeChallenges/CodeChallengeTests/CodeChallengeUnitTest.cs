@@ -2,6 +2,7 @@ using DataStructures;
 using FIFOAnimalShelter;
 using FizzBuzzTree;
 using System.Collections.Generic;
+using Trees;
 using Xunit;
 
 namespace CodeChallengeTests
@@ -227,9 +228,44 @@ namespace CodeChallengeTests
     {
       RepeatedWord repeatedWord = new RepeatedWord();
       string testString = "";
-
       string testValue = repeatedWord.FindRepeatedWord(testString);
       Assert.Equal("", testValue);
+    }
+    [Fact]
+    public void List_Of_Common_Values_In_Two_Trees() 
+    {
+      Trees.BinaryTree<int> btOne = new Trees.BinaryTree<int>(150);
+      btOne.Root.Left = new Node<int>(100);
+      btOne.Root.Left.Left = new Node<int>(75);
+      btOne.Root.Left.Right = new Node<int>(160);
+
+      btOne.Root.Left.Right.Left = new Node<int>(125);
+      btOne.Root.Left.Right.Right = new Node<int>(175);
+
+      btOne.Root.Right = new Node<int>(250);
+      btOne.Root.Right.Left = new Node<int>(200);
+      btOne.Root.Right.Right = new Node<int>(350);
+
+      btOne.Root.Right.Right.Left = new Node<int>(300);
+      btOne.Root.Right.Right.Right = new Node<int>(500);
+
+      Trees.BinaryTree<int> btTwo = new Trees.BinaryTree<int>(42);
+
+      btTwo.Root.Left = new Node<int>(100);
+      btTwo.Root.Left.Left = new Node<int>(15);
+      btTwo.Root.Left.Right = new Node<int>(100);
+
+      btTwo.Root.Left.Right.Left = new Node<int>(125);
+      btTwo.Root.Left.Right.Right = new Node<int>(175);
+
+      btTwo.Root.Right = new Node<int>(600);
+      btTwo.Root.Right.Left = new Node<int>(200);
+      btTwo.Root.Right.Right = new Node<int>(350);
+
+      btTwo.Root.Right.Right.Left = new Node<int>(4);
+      btTwo.Root.Right.Right.Right = new Node<int>(500);
+
+
     }
     [Fact]
     public void Find_No_Repeated_Word_In_String_Of_Non_Word_Characters()
@@ -240,7 +276,103 @@ namespace CodeChallengeTests
       string testValue = repeatedWord.FindRepeatedWord(testString);
       Assert.Equal("", testValue);
     }
+    [Fact]
+    public void Binary_Tree_Intersection_List_Correct_Values()
+    {
+      BinaryTree<int> b1 = new BinaryTree<int>(150);
+      b1.Root.Left = new Node<int>(100);
+      b1.Root.Left.Left = new Node<int>(75);
+      
+      b1.Root.Left.Right = new Node<int>(160);
+      b1.Root.Left.Right.Left = new Node<int>(125);
+      b1.Root.Left.Right.Right = new Node<int>(175);
+
+      b1.Root.Right = new Node<int>(250);
+      b1.Root.Right.Left = new Node<int>(200);
+
+      b1.Root.Right.Right = new Node<int>(350);
+      b1.Root.Right.Right.Left = new Node<int>(300);
+      b1.Root.Right.Right.Right = new Node<int>(500);
+
+      BinaryTree<int> b2 = new BinaryTree<int>(42);
+      b2.Root.Left = new Node<int>(100);
+      b2.Root.Left.Left = new Node<int>(15);
+
+      b2.Root.Left.Right = new Node<int>(160);
+      b2.Root.Left.Right.Left = new Node<int>(125);
+      b2.Root.Left.Right.Right = new Node<int>(175);
+
+      b2.Root.Right = new Node<int>(600);
+      b2.Root.Right.Left = new Node<int>(200);
+
+      b2.Root.Right.Right = new Node<int>(350);
+      b2.Root.Right.Right.Left = new Node<int>(4);
+      b2.Root.Right.Right.Right = new Node<int>(500);
+
+      TreeIntersection treeIntersection = new TreeIntersection(b1, b2);
+      List<int> testValues = treeIntersection.TreeIntersectValues();
+      List<int> expectedValues = new List<int> { 100, 160, 200, 350, 125, 175, 500 };
+
+      Assert.Equal(expectedValues, testValues);
+
+    }
+    [Fact]
+    public void Binary_Tree_Intersection_List_No_Intersecting_Values()
+    {
+      BinaryTree<int> b1 = new BinaryTree<int>(150);
+      b1.Root.Left = new Node<int>(100);
+      b1.Root.Left.Left = new Node<int>(75);
+
+      b1.Root.Left.Right = new Node<int>(160);
+      b1.Root.Left.Right.Left = new Node<int>(125);
+      b1.Root.Left.Right.Right = new Node<int>(175);
+
+      b1.Root.Right = new Node<int>(250);
+      b1.Root.Right.Left = new Node<int>(200);
+
+      b1.Root.Right.Right = new Node<int>(350);
+      b1.Root.Right.Right.Left = new Node<int>(300);
+      b1.Root.Right.Right.Right = new Node<int>(500);
+
+      BinaryTree<int> b2 = new BinaryTree<int>(42);
+      b2.Root.Left = new Node<int>(55);
+      b2.Root.Left.Left = new Node<int>(15);
+
+      b2.Root.Left.Right = new Node<int>(22);
+      b2.Root.Left.Right.Left = new Node<int>(12);
+      b2.Root.Left.Right.Right = new Node<int>(1086);
+
+      b2.Root.Right = new Node<int>(600);
+      b2.Root.Right.Left = new Node<int>(1);
+
+      b2.Root.Right.Right = new Node<int>(88);
+      b2.Root.Right.Right.Left = new Node<int>(4);
+      b2.Root.Right.Right.Right = new Node<int>(9);
+
+      TreeIntersection treeIntersection = new TreeIntersection(b1, b2);
+      List<int> testValues = treeIntersection.TreeIntersectValues();
+      Assert.Empty(testValues);
+    }
+    [Fact]
+    public void Binary_Tree_Intersection_Helper_Shift_Queue_Test()
+    {
+      TreeIntersection treInter = new TreeIntersection();
+      treInter.QOne = new DataStructures.Queue<Node<int>>();
+      treInter.QOne.Enqueue(new Node<int>(10));
+      treInter.QOne.Enqueue(new Node<int>(20));
+      treInter.QOne.Enqueue(new Node<int>(30));      
+      treInter.ShiftQueue(treInter.QOne);      
+      Assert.Equal(20, treInter.QOne.Front.Value.Value);
+    }
+    [Fact]
+    public void Binary_Tree_Intersection_Helper_Shift_Queue_Test_Queue_Empty()
+    {
+      TreeIntersection treInter = new TreeIntersection();
+      treInter.QOne = new DataStructures.Queue<Node<int>>();      
+      treInter.ShiftQueue(treInter.QOne);
+      Assert.Null(treInter.QOne.Front);
+    }
 
   }
-  }
+}
 

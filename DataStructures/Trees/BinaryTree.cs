@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DataStructures;
 
 namespace Trees
+
 {
   public class BinaryTree<T> where T : IComparable
   {
