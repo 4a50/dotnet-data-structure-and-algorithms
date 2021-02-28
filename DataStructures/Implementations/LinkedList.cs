@@ -31,8 +31,8 @@ namespace DataStructures
       Node<T> current = Head;
       while (current != null)
       {
-        Console.Write($"[{current.Value}] => ");
-        output += $"[{current.Value}] => ";
+        Console.Write($"<{current.Value}> => ");
+        output += $"<{current.Value}> => ";
         current = current.Next;
       }
       Console.WriteLine("Null");

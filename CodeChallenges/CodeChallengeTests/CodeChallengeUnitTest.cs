@@ -204,6 +204,31 @@ namespace CodeChallengeTests
       Assert.Equal(expected, fizzResult.ValueList.ToArray());
     }
     [Fact]
+    public void Find_Repeated_Word_In_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      //string testString = "Once upon a time, there was a brave princess who...";
+      string testString = "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
+      string testValue = repeatedWord.FindRepeatedWord(testString);      
+      Assert.Equal("IT", testValue);
+
+    }
+    [Fact]
+    public void Find_No_Repeated_Word_In_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "To boldly go where, no one has gone before";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+    [Fact]
+    public void Find_No_Repeated_Word_In_Empty_String()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "";
+    }
+    [Fact]
     public void List_Of_Common_Values_In_Two_Trees() 
     {
       Trees.BinaryTree<int> btOne = new Trees.BinaryTree<int>(150);
@@ -238,8 +263,19 @@ namespace CodeChallengeTests
       btTwo.Root.Right.Right.Right = new Node<int>(500);
 
 
-
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
     }
+    [Fact]
+    public void Find_No_Repeated_Word_In_String_Of_Non_Word_Characters()
+    {
+      RepeatedWord repeatedWord = new RepeatedWord();
+      string testString = "^%!#!@#$";
+
+      string testValue = repeatedWord.FindRepeatedWord(testString);
+      Assert.Equal("", testValue);
+    }
+
   }
 }
 
