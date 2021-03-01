@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace FizzBuzzTree
 {
@@ -8,15 +6,15 @@ namespace FizzBuzzTree
   {
     public KAryNode<T> Root { get; set; }
     public List<T> ValueList = new List<T>();
-    public KAryTree<string> FizzTree {get; set;}
-    public KAryTree() 
+    public KAryTree<string> FizzTree { get; set; }
+    public KAryTree()
     {
       Root = new KAryNode<T>();
     }
-    public KAryTree (T value)
+    public KAryTree(T value)
     {
-      Root = new KAryNode<T>(value);      
-     }
+      Root = new KAryNode<T>(value);
+    }
     /// <summary>
     /// Will iterate through the tree and update the ValueList property will all the values in an pre-order manner.
     /// </summary>
@@ -34,7 +32,7 @@ namespace FizzBuzzTree
       return valList;
     }
   }
-  
+
 }
 
 
