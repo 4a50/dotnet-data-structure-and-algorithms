@@ -133,8 +133,8 @@ namespace DataStructuresTest
       testList.Insert(22);
       testList.Insert(81);
       testList.Insert(1999);
-      testList.Insert(741);      
-      Assert.Equal(0,testList.InsertBefore(100, 199));
+      testList.Insert(741);
+      Assert.Equal(0, testList.InsertBefore(100, 199));
     }
     /// <summary>
     /// These tests the Kth value from the Tail in a linked List

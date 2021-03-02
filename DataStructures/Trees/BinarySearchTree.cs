@@ -5,7 +5,7 @@ namespace Trees
   public class BinarySearchTree
   {
     public Node<int> Root { get; set; }
-    public BinarySearchTree() { }    
+    public BinarySearchTree() { }
     public BinarySearchTree(int value)
     {
       Root = new Node<int>(value);

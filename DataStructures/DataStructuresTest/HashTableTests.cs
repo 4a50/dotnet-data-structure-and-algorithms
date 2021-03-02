@@ -1,6 +1,4 @@
 ﻿using DataStructures;
-using System.Collections.Generic;
-using Trees;
 using Xunit;
 namespace DataStructuresTest
 {
@@ -9,13 +7,13 @@ namespace DataStructuresTest
 
     [Fact]
     public void Successfully_Add_A_Value_To_HashTable()
-    {      
-    HashTable hash = new HashTable(10);
+    {
+      HashTable hash = new HashTable(10);
       hash.Add("Fox McCloud", "Leader");
       hash.Add("Falco Lombardi", "Hot-Shot");
       hash.Add("Slippy Toad", "No-One Cares");
       hash.Add("Peppy Hare", "Father Figure");
-      hash.Add("General Pepper", "Leader");      
+      hash.Add("General Pepper", "Leader");
       hash.Add("Andross", "Antagonist");
       Assert.Equal("No-One Cares", hash.Map[5].Head.Value.Value);
       Assert.Equal("Slippy Toad", hash.Map[5].Head.Value.Key);
@@ -30,7 +28,7 @@ namespace DataStructuresTest
       hash.Add("Peppy Hare", "Father Figure");
       hash.Add("General Pepper", "Leader");
       hash.Add("Andross", "Antagonist");
-      
+
       string key = "Peppy Hare";
       string value = "Father Figure";
 
@@ -48,7 +46,7 @@ namespace DataStructuresTest
       hash.Add("Andross", "Antagonist");
 
       string key = "Princess Daisy";
-     
+
       Assert.Null(hash.Get(key));
     }
     [Fact]
@@ -76,7 +74,7 @@ namespace DataStructuresTest
       hash.Add("General Pepper", "Leader");
       hash.Add("Andross", "Antagonist");
 
-      string key = "Alex Kidd";     
+      string key = "Alex Kidd";
 
       Assert.False(hash.Contains(key));
     }

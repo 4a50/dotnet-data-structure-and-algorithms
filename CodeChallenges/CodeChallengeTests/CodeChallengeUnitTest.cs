@@ -1,4 +1,5 @@
 using DataStructures;
+using LeftJoin;
 using FIFOAnimalShelter;
 using FizzBuzzTree;
 using System.Collections.Generic;
@@ -164,9 +165,9 @@ namespace CodeChallengeTests
 
       Assert.Equal(expectedInts, testList.ToArray());
 
-      }
-    
-    
+    }
+
+
     /// <summary>
     /// Test to see if the FizzBuzz Tree method will create a new tree with FizzBuzz
     /// divisible by 3 = "Fizz"
@@ -174,7 +175,7 @@ namespace CodeChallengeTests
     /// divisible by 3 and 5 = "FizzBuzz
     /// Any other number = string equivalent (4 = "4")
     /// </summary>
-    
+
     [Fact]
     public void Test_FizzBuzz_Tree()
     {
@@ -194,11 +195,11 @@ namespace CodeChallengeTests
       intTree.Root.Leaves[2].Leaves.Add(new KAryNode<int>(60));
 
       //expected array of strings
-      string[] expected = { "FizzBuzz","FizzBuzz","Buzz","FizzBuzz","Fizz", "Buzz", "7", "FizzBuzz" };
-            
+      string[] expected = { "FizzBuzz", "FizzBuzz", "Buzz", "FizzBuzz", "Fizz", "Buzz", "7", "FizzBuzz" };
+
       //Running Method
       //intTree.KAryTreeIteration(intTree.Root, intTree.ValueList);
-      
+
       KAryTree<string> fizzResult = FizzTreeMaker.FizzBuzzTree(intTree);
       fizzResult.KAryTreeIteration(fizzResult.Root, fizzResult.ValueList);
 
@@ -210,7 +211,7 @@ namespace CodeChallengeTests
       RepeatedWord repeatedWord = new RepeatedWord();
       //string testString = "Once upon a time, there was a brave princess who...";
       string testString = "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
-      string testValue = repeatedWord.FindRepeatedWord(testString);      
+      string testValue = repeatedWord.FindRepeatedWord(testString);
       Assert.Equal("IT", testValue);
 
     }
@@ -232,7 +233,7 @@ namespace CodeChallengeTests
       Assert.Equal("", testValue);
     }
     [Fact]
-    public void List_Of_Common_Values_In_Two_Trees() 
+    public void List_Of_Common_Values_In_Two_Trees()
     {
       Trees.BinaryTree<int> btOne = new Trees.BinaryTree<int>(150);
       btOne.Root.Left = new Node<int>(100);
@@ -282,7 +283,7 @@ namespace CodeChallengeTests
       BinaryTree<int> b1 = new BinaryTree<int>(150);
       b1.Root.Left = new Node<int>(100);
       b1.Root.Left.Left = new Node<int>(75);
-      
+
       b1.Root.Left.Right = new Node<int>(160);
       b1.Root.Left.Right.Left = new Node<int>(125);
       b1.Root.Left.Right.Right = new Node<int>(175);
@@ -360,19 +361,88 @@ namespace CodeChallengeTests
       treInter.QOne = new DataStructures.Queue<Node<int>>();
       treInter.QOne.Enqueue(new Node<int>(10));
       treInter.QOne.Enqueue(new Node<int>(20));
-      treInter.QOne.Enqueue(new Node<int>(30));      
-      treInter.ShiftQueue(treInter.QOne);      
+      treInter.QOne.Enqueue(new Node<int>(30));
+      treInter.ShiftQueue(treInter.QOne);
       Assert.Equal(20, treInter.QOne.Front.Value.Value);
     }
     [Fact]
     public void Binary_Tree_Intersection_Helper_Shift_Queue_Test_Queue_Empty()
     {
       TreeIntersection treInter = new TreeIntersection();
-      treInter.QOne = new DataStructures.Queue<Node<int>>();      
+      treInter.QOne = new DataStructures.Queue<Node<int>>();
       treInter.ShiftQueue(treInter.QOne);
       Assert.Null(treInter.QOne.Front);
     }
 
+    [Fact]
+    public void Left_Join_Two_Hash_Tables()
+    {
+      HashTable hOne = new HashTable(20);
+      hOne.Add("fond", "enamored");
+      hOne.Add("wrath", "anger");
+      hOne.Add("diligent", "employed");
+      hOne.Add("outfit", "garb");
+      hOne.Add("guide", "usher");
+
+      HashTable hTwo = new HashTable(20);
+      hTwo.Add("fond", "adverse");
+      hTwo.Add("wrath", "delight");
+      hTwo.Add("diligent", "idle");
+      hTwo.Add("guide", "follow");
+      hTwo.Add("flow", "jam");
+
+      List<string[]> expectedValues = new List<string[]>
+      {
+        new string[3]{"guide", "usher", "follow" },
+        new string[3]{"wrath", "anger", "delight" },
+        new string[3]{"fond", "enamored", "adverse"},
+        new string[3]{"diligent", "employed", "idle"},
+        new string[3]{"outfit", "garb", "NULL" },
+      };
+      List<string[]> testValues = LeftJoin.LeftJoin.LeftJoinHashTable(hOne, hTwo);
+      Assert.Equal(expectedValues, testValues);
+    }
+
+    [Fact]
+    public void Left_Join_Two_Hash_Tables_Empty_Right_Table()
+    {
+      HashTable hOne = new HashTable(20);     
+
+      HashTable hTwo = new HashTable(20);
+      hTwo.Add("fond", "adverse");
+      hTwo.Add("wrath", "delight");
+      hTwo.Add("diligent", "idle");
+      hTwo.Add("guide", "follow");
+      hTwo.Add("flow", "jam");
+
+      List<string[]> expectedValues = new List<string[]>();      
+
+      List<string[]> testValues = LeftJoin.LeftJoin.LeftJoinHashTable(hOne, hTwo);
+      Assert.Equal(expectedValues, testValues);
+    }
+    [Fact]
+    public void Left_Join_Two_Hash_Tables_Right_Table_Empty()
+    {
+      HashTable hOne = new HashTable(20);
+      hOne.Add("fond", "enamored");
+      hOne.Add("wrath", "anger");
+      hOne.Add("diligent", "employed");
+      hOne.Add("outfit", "garb");
+      hOne.Add("guide", "usher");
+
+      HashTable hTwo = new HashTable(20);     
+
+      List<string[]> expectedValues = new List<string[]>
+      {
+        new string[3]{"guide", "usher", "NULL" },
+        new string[3]{"wrath", "anger", "NULL" },
+        new string[3]{"fond", "enamored", "NULL"},
+        new string[3]{"diligent", "employed", "NULL"},
+        new string[3]{"outfit", "garb", "NULL" },
+      };
+      List<string[]> testValues = LeftJoin.LeftJoin.LeftJoinHashTable(hOne, hTwo);
+      Assert.Equal(expectedValues, testValues);
+    }
   }
 }
 

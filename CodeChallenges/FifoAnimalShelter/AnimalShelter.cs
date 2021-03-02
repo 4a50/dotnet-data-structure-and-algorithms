@@ -35,30 +35,30 @@ namespace FIFOAnimalShelter
       tempAnimal = animalQueue.Front.Value;
       bool foundAnimal = false;
       // Searched the Animal Queue for the preferred animal
-        while (animalQueue.Front != null)
+      while (animalQueue.Front != null)
+      {
+        tempAnimal = animalQueue.Front.Value;
+        if (tempAnimal.Species == pref)
         {
-          tempAnimal = animalQueue.Front.Value;
-          if (tempAnimal.Species == pref)
-          {
-            animalQueue.Dequeue();
-          foundAnimal = true;
-            break;
-          }
-          searchStack.Push(tempAnimal);
           animalQueue.Dequeue();
+          foundAnimal = true;
+          break;
         }
+        searchStack.Push(tempAnimal);
+        animalQueue.Dequeue();
+      }
       //If it does not find that animal set temp to null      
       //Enqueues the stack to the animalQueue
-        while (searchStack.Top != null)
+      while (searchStack.Top != null)
       {
         animalQueue.Enqueue(searchStack.Top.Value);
         searchStack.Pop();
       }
-      
+
       if (!foundAnimal) { return null; }
       return tempAnimal;
-      }
-      
-    
+    }
+
+
   }
 }

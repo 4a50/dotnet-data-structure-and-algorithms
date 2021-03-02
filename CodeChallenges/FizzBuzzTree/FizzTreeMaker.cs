@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FizzBuzzTree
+﻿namespace FizzBuzzTree
 {
   public static class FizzTreeMaker
   {
@@ -24,11 +22,11 @@ namespace FizzBuzzTree
     /// <param name="strNode"></param>
     /// <returns></returns>
     private static KAryNode<string> FizzBuzzIterate(KAryNode<int> intNode, KAryNode<string> strNode)
-    {      
-      strNode.Value = FizzBuzzConverter(intNode).Value;           
+    {
+      strNode.Value = FizzBuzzConverter(intNode).Value;
 
       for (int i = 0; i < intNode.Leaves.Count; i++)
-      {        
+      {
         strNode.Leaves.Add(new KAryNode<string>());
         FizzBuzzIterate(intNode.Leaves[i], strNode.Leaves[i]);
       }
