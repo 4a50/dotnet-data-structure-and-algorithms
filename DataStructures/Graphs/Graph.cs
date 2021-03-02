@@ -21,12 +21,12 @@ namespace Graphs
       _size++;
       return node;
     }
-    public void AddDirectedEdge(Vertex<T> a, Vertex<T> b)
+    public void AddDirectedEdge(Vertex<T> a, Vertex<T> b, int weight = 0)
     {
       AdjecencyList[a].Add(
         new Edge<T>
         {
-          Weight = 0,
+          Weight = weight,
           Vertex = b
         }
       );
@@ -43,17 +43,11 @@ namespace Graphs
     public List<T> GetNodes()
     {
       List<T> nodes = new List<T>();
-      
-      foreach(var item in AdjecencyList)
-      {        
-          foreach(var edge in item.Value)
-          {
-          if (!nodes.Contains(edge.Vertex.Value))
-          {
-            nodes.Add(edge.Vertex.Value);
-          }
-        }
-      }
+      if (AdjecencyList.Count == 0) { return null; }
+      foreach (var item in AdjecencyList)
+      {
+        nodes.Add(item.Key.Value);
+      }      
       return nodes;
     }
     public int Size()
