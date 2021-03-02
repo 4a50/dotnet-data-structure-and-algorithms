@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeIntersection", "CodeCha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepeatedWord", "RepeatedWord\RepeatedWord.csproj", "{9E6E3080-79AF-4D14-841D-6100C9B7474A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeftJoin", "CodeChallenges\LeftJoin\LeftJoin.csproj", "{0C931B52-3954-48F4-BE9C-B1038DE772AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeftJoin", "CodeChallenges\LeftJoin\LeftJoin.csproj", "{0C931B52-3954-48F4-BE9C-B1038DE772AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs", "DataStructures\Graphs\Graphs.csproj", "{DEB48258-8146-4E7A-9716-041F84CB849C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{0C931B52-3954-48F4-BE9C-B1038DE772AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C931B52-3954-48F4-BE9C-B1038DE772AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C931B52-3954-48F4-BE9C-B1038DE772AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB48258-8146-4E7A-9716-041F84CB849C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB48258-8146-4E7A-9716-041F84CB849C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB48258-8146-4E7A-9716-041F84CB849C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB48258-8146-4E7A-9716-041F84CB849C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +128,7 @@ Global
 		{662AA9A4-DF63-4B12-942B-9F44D6EEE792} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{9E6E3080-79AF-4D14-841D-6100C9B7474A} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
 		{0C931B52-3954-48F4-BE9C-B1038DE772AD} = {1BB78EB1-B9A8-4E82-BFCD-CADF0140E745}
+		{DEB48258-8146-4E7A-9716-041F84CB849C} = {08F49070-8D0C-4696-8E3E-FDBAA6A41FAB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D8CBDA3-1372-4033-8C11-81DBE1CC27E8}

@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\CodeChallenges\TreeIntersection\TreeIntersection.csproj" />
+    <ProjectReference Include="..\Graphs\Graphs.csproj" />
     <ProjectReference Include="..\Implementations\Implementations.csproj" />
     <ProjectReference Include="..\Trees\Trees.csproj" />
   </ItemGroup>
