@@ -26,6 +26,7 @@
     <ProjectReference Include="..\..\RepeatedWord\RepeatedWord.csproj" />
     <ProjectReference Include="..\FIFOAnimalShelter\FIFOAnimalShelter.csproj" />
     <ProjectReference Include="..\FizzBuzzTree\FizzBuzzTree.csproj" />
+    <ProjectReference Include="..\LeftJoin\LeftJoin.csproj" />
     <ProjectReference Include="..\LinkedLists\LinkedLists.csproj" />
     <ProjectReference Include="..\Multi-Bracket-Validation\Multi-Bracket-Validation.csproj" />
     <ProjectReference Include="..\QueueWithStacks\QueueWithStacks.csproj" />

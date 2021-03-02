@@ -21,7 +21,7 @@ namespace DataStructures
       Node<T> node = new Node<T>(value);
       Head = node;
     }
-    
+
     //Methods
 
     //1st Method - While

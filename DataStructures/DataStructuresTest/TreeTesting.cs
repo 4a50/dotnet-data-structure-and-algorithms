@@ -153,7 +153,7 @@ namespace DataStructuresTest
       bst.Add(40);
       Assert.False(bst.Contains(200));
     }
-    [Fact] 
+    [Fact]
     public static void Locates_Max_Value_In_A_Binary_Tree()
     {
       BinaryTree<int> bt = new BinaryTree<int>(756);
@@ -170,7 +170,7 @@ namespace DataStructuresTest
     public static void Locates_Max_Value_Of_Single_Node()
     {
       BinaryTree<int> bt = new BinaryTree<int>(143);
-     
+
       Assert.Equal(143, bt.FindMax(0, bt.Root));
     }
 
@@ -194,6 +194,6 @@ namespace DataStructuresTest
 
 
     }
-    
+
   }
 }

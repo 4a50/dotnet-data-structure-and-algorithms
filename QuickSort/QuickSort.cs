@@ -1,9 +1,7 @@
-﻿using System;
-
-namespace QuickSort
+﻿namespace QuickSort
 {
   public class QuickSort
-  {    
+  {
     public static int[] QSort(int[] arr, int left, int right)
     {
       if (left < right)

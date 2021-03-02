@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DataStructures;
+using System;
 using System.Collections.Generic;
-using DataStructures;
 
 namespace Trees
 
@@ -10,7 +10,7 @@ namespace Trees
     public Node<T> Root { get; set; }
 
     public BinaryTree() { }
-        
+
     public BinaryTree(T value)
     {
       Root = new Node<T>(value);
@@ -64,11 +64,11 @@ namespace Trees
       return nodeValues.ToArray();
     }
     public T FindMax(T maxValue, Node<T> curNode)
-    {      
+    {
       if (curNode == null) return maxValue;
       Console.WriteLine($"curNode: {curNode.Value}\tmaxValue: {maxValue}\tCompare: {maxValue.CompareTo(curNode.Value)}");
       if (maxValue.CompareTo(curNode.Value) < 0) maxValue = curNode.Value;
-      
+
 
       if (curNode.Left != null) FindMax(maxValue, curNode.Left);
       if (curNode != null) FindMax(maxValue, curNode.Right);
@@ -85,8 +85,8 @@ namespace Trees
       List<T> nodeList = new List<T>();
       nodeQueue.Enqueue(Root);
       Node<T> curNode = null;
-      
-      while ( !nodeQueue.IsEmpty())
+
+      while (!nodeQueue.IsEmpty())
       {
         //else { return nodeList; }
         if (curNode != null)
@@ -95,12 +95,12 @@ namespace Trees
           if (curNode.Left != null) nodeQueue.Enqueue(curNode.Left);
           if (curNode.Right != null) nodeQueue.Enqueue(curNode.Right);
         }
-        
+
         Node<Node<T>> node = nodeQueue.Dequeue();
-        if(node != null) curNode = node.Value;
+        if (node != null) curNode = node.Value;
       }
       return nodeList;
-}
+    }
 
 
   }
